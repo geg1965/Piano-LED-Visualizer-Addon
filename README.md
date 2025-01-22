@@ -20,9 +20,7 @@ sudo apt-get upgrade
 
 ### 2. Copy php directory to your existing installation
 
-```bash
 Navigate to the webinterface folder of your PLV installation
-```
 
 ```bash
 cd /home/Piano-LED-Visualizer/webinterface
