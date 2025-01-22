@@ -1,16 +1,20 @@
 # Piano-LED-Visualizer-Addon
-Addon to save and load presets in Piano-LED-Visualizer
+Addon to save and load presets in Piano-LED-Visualizer.
 
 
 
-sudo apt install php -y
+## Prerequisits:
 
-Prerquisits:
+Up and running installation of [Piano-LED-Visualizer](https://github.com/onlaj/Piano-LED-Visualizer).
 
+## Installation:
 
-1. Update your system:
+### 1. Update your system!:
 
-2. Copy php directory to your existing installation
+- `sudo apt-get update`
+- `sudo apt-get upgrade` //*it will take a while, go grab a coffee*
+
+### 2. Copy php directory to your existing installation
 
 - Navigate to the webinterface folder of your PLV installation:
 
@@ -20,11 +24,11 @@ Prerquisits:
 
 ` sudo git clone https://github.com/geg1965/Piano-LED-Visualizer-Addon php`
 
-2. Installing php
+### 3. Installing php:
 ```bash
 sudo apt-get install php8.2-common php8.2-cli
 ```
-3. Enable autostart PHP script on boot:
+### 4. Enable autostart PHP script on boot:
 
 ` sudo nano /lib/systemd/system/plvconfig.service`
 
@@ -50,7 +54,11 @@ Group=plv
 
 Don't forget to adjust the parameters for "ExecStart", "User" and "Group" to your environment! 
 
-4. Reload daemon and enable service:
+### 5. Change permissions:
+
+  ` sudo chmod a+rwxX -R /home/Piano-LED-Visualizer/webinterface/php/`
+
+### 6. Reload daemon and enable service:
 
    ` sudo systemctl daemon-reload`
    
@@ -59,6 +67,3 @@ Don't forget to adjust the parameters for "ExecStart", "User" and "Group" to you
    ` sudo systemctl start plvconfig.service`
 
 
-5. Change permissions:
-
-  ` sudo chmod a+rwxX -R /home/Piano-LED-Visualizer/webinterface/php/`
