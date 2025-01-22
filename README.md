@@ -1,7 +1,7 @@
-# Piano-LED-Visualizer-Addon
+# <a href="url"><img src="https://raw.githubusercontent.com/onlaj/Piano-LED-Visualizer/master/Docs/logo.svg" align="left" height="40" width="40" ></a> Piano LED Visualizer Addon
 Addon to save and load presets in Piano-LED-Visualizer.
 
-
+# <a href="url"><img src="https://raw.githubusercontent.com/geg1965/Piano-LED-Visualizer-Addon/master/imgs/screenshot.jpg" align="left" height="400" width="100%" ></a>
 
 ## Prerequisits:
 
