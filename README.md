@@ -1,5 +1,5 @@
 # Piano-LED-Visualizer-Addon
-Addon to save and load presets in Piano LED Visualizer
+Addon to save and load presets in Piano-LED-Visualizer
 
 
 
@@ -12,17 +12,13 @@ Prerquisits:
 
 2. Copy php directory to your existing installation
 
-- Navigate to /home folder:
+- Navigate to the webinterface folder of your PLV installation:
 
-` cd /home/`
+` cd /home/Piano-LED-Visualizer/webinterface`
 
 - GIT clone repository
 
-`sudo git clone https://github.com/geg1965/Piano-LED-Visualizer-Addon`
-
-`cd Piano-LED-Visualizer`
-
-
+`sudo git clone https://github.com/geg1965/Piano-LED-Visualizer-Addon php`
 
 2. Installing php
 ```bash
