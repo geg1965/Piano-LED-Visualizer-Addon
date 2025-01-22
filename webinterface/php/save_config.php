@@ -1,9 +1,9 @@
 <?php
 $config = $_GET["config"];
-$output = shell_exec("./save_config.sh $config");
-echo "<pre>$output</pre>";
+shell_exec("cp ../../config/settings.xml ./cfgs/settings.xml.$config");
+shell_exec("cp ../../config/sequences.xml ./cfgs/sequences.xml.$config");
 ?>
 <script>
-alert("Preset was saved!")
+alert("Das Preset wurde gespeichert!")
 window.location.href = 'presets.php';
 </script>
