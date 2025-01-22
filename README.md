@@ -18,7 +18,7 @@ Prerquisits:
 
 - GIT clone repository
 
-`sudo git clone https://github.com/geg1965/Piano-LED-Visualizer-Addon php`
+` sudo git clone https://github.com/geg1965/Piano-LED-Visualizer-Addon php`
 
 2. Installing php
 ```bash
@@ -26,7 +26,7 @@ sudo apt-get install php8.2-common php8.2-cli
 ```
 3. Enable autostart PHP script on boot:
 
-`sudo nano /lib/systemd/system/plvconfig.service`
+` sudo nano /lib/systemd/system/plvconfig.service`
 
 Paste and save:
 
@@ -56,9 +56,9 @@ Don't forget to adjust the parameters for "ExecStart", "User" and "Group" to you
    
    ` sudo systemctl enable plvconfig.service`
     
-   `sudo systemctl start plvconfig.service`
+   ` sudo systemctl start plvconfig.service`
 
 
 5. Change permissions:
 
-  `sudo chmod a+rwxX -R /home/Piano-LED-Visualizer/webinterface/php/`
+  ` sudo chmod a+rwxX -R /home/Piano-LED-Visualizer/webinterface/php/`
