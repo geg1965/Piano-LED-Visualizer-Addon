@@ -2,7 +2,6 @@
 $config = $_GET["config"];
 shell_exec("cp ./cfgs/settings.xml.$config ../../config/settings.xml");
 shell_exec("cp ./cfgs/sequences.xml.$config ../../config/sequences.xml");
-shell_exec("systemctl restart rtpmidid");
 shell_exec("systemctl restart visualizer");
 sleep(10);
 ?>
