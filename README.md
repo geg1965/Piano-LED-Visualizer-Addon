@@ -10,7 +10,11 @@ Up and running installation of [Piano-LED-Visualizer](https://github.com/onlaj/P
 
 ## Installation:
 
-### 1. Update your system!:
+### 1. Create a backup:
+
+This addon is without warranty! I strongly recommend making a backup of your existing installation beforehand. Generally, I recommend installing on a new SD card with the latest release of ["Raspbian 12 (bookworm)"](https://www.raspberrypi.com/software/) as minimal OS, as well as the latest version of [Piano-LED-Visualizer](https://github.com/onlaj/Piano-LED-Visualizer) and [rtpMIDI Daemon](https://github.com/davidmoreno/rtpmidid/releases).
+
+### 2. Update your system!:
 
 ```bash
 sudo apt-get update
@@ -18,7 +22,7 @@ sudo apt-get upgrade
 ```
 ###### *it will take a while, go grab a coffee
 
-### 2. Copy php directory to your existing installation
+### 3. Copy php directory to your existing installation
 
 Navigate to the webinterface folder of your PLV installation
 
@@ -32,11 +36,11 @@ cd /home/Piano-LED-Visualizer/webinterface
 sudo git clone https://github.com/geg1965/Piano-LED-Visualizer-Addon php
 ```
 
-### 3. Installing php:
+### 4. Installing php:
 ```bash
 sudo apt-get install php8.2-common php8.2-cli
 ```
-### 4. Enable autostart PHP script on boot:
+### 5. Enable autostart PHP script on boot:
 
 ```bash
 sudo nano /lib/systemd/system/plvconfig.service
@@ -62,13 +66,13 @@ Group=plv
 ```
 ###### *Press CTRL + O to save file, confirm with enter and CTRL + X to exit editor and don't forget to adjust the parameters "ExecStart", "User" and "Group"! 
 
-### 5. Change permissions:
+### 6. Change permissions:
 
 ```bash
 sudo chmod a+rwxX -R /home/Piano-LED-Visualizer/webinterface/php/
 ```
 
-### 6. Reload daemon and enable service:
+### 7. Reload daemon and enable service:
 
 ```bash
 sudo systemctl daemon-reload
