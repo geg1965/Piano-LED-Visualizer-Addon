@@ -76,3 +76,6 @@ sudo systemctl enable plvconfig.service
 sudo systemctl start plvconfig.service
 ```
 
+## Credits:
+
+Thanks to [onlaj](https://github.com/onlaj) for his work on the [Piano-LED-Visualizer](https://github.com/onlaj/Piano-LED-Visualizer)! I really enjoyed creating this interactive lighting for my master keyboard. The ledemu2.html used here is part of his code and has only been minimally adapted (autorefresh added). 
