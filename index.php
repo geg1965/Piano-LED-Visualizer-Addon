@@ -16,18 +16,24 @@
     .absolute-button1 {
       position: absolute;
       top: 55px;
-      left: 45%;
+      left: calc(50% - 80px);
     }
     .absolute-button2 {
       position: absolute;
       top: 55px;
-      left: 35%;
+      left: calc(50% - 193px);
     }
     .absolute-button3 {
       position: absolute;
       top: 55px;
-      left: 60%;
+      left: calc(50% + 90px);
     }
+    .absolute-button4 {
+      position: absolute;
+      top: 15px;
+      left: calc(100% - 140px);
+    }
+
     body {
       background-color: #1c87c9;
     }
@@ -54,6 +60,8 @@
   <button class="absolute-button1"data-url="LED-Piano.php"type="button">Refresh </button>
   <button class="absolute-button2"onclick="window.open('/ledemu2.html','location=no','width=300,height=400');" /> LED Emulator</button>
   <button class="absolute-button3"onclick="window.open('https://flyingnotes.app','flyingnotes','width=800,height=400');" /> flyingnotes</button>
+  <button class="absolute-button4"data-url="rtpMIDI.php"type="button"> Set </button>
+
   <script>
     Array.prototype.forEach.call(document.querySelectorAll('[data-url]'), function(elem) {
       elem.addEventListener('click', function(e) {
