@@ -4,7 +4,7 @@
     <title>PLV Presets</title>
     <style>
     body {
-      background-image: url('/imgs/banner2.png');
+      background-image: url('/imgs/banner.png');
       background-repeat: no-repeat;
       background-position: center -3px;
     }
