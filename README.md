@@ -49,7 +49,7 @@ Paste and save:
 
 ```bash
 [Unit]
-Description=Piano LED Visualizer Addon
+Description=Piano-LED Visualizer Addon
 After=network-online.target
 Wants=network-online.target
 
