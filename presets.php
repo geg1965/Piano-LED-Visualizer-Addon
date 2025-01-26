@@ -2,6 +2,13 @@
 <html>
   <head>
     <title>PLV Presets</title>
+    <style>
+    body {
+      background-image: url('/imgs/banner2.png');
+      background-repeat: no-repeat;
+      background-position: center -3px;
+    }
+  </style>
   </head>
   <body>
     <select size="1" name="jumpit" onchange="document.location.href=this.value">
