@@ -3,6 +3,9 @@ Addon to save and load presets in [Piano-LED-Visualizer](https://github.com/onla
 
 ##### <a href="[url](https://raw.githubusercontent.com/geg1965/Piano-LED-Visualizer-Addon/master/imgs/screenshot_1.png)"><img src="https://raw.githubusercontent.com/geg1965/Piano-LED-Visualizer-Addon/master/imgs/screenshot_1.png" align="left" height="400" width="100%" ></a> A screenshot with the new buttons and dropdownmenus in top of the screen to save and load the PLV-settings and sequences.
 
+##### <a href="[url](https://raw.githubusercontent.com/geg1965/Piano-LED-Visualizer-Addon/master/imgs/screenshot_2.png)"><img src="https://raw.githubusercontent.com/geg1965/Piano-LED-Visualizer-Addon/master/imgs/screenshot_2.png" align="left" height="600" width="100%" ></a> Screenshot of the static rtpMIDI connection setup.
+
+
 ## Prerequisits:
 
 Up and running installation of [Piano-LED-Visualizer](https://github.com/onlaj/Piano-LED-Visualizer).
