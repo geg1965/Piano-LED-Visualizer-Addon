@@ -10,7 +10,7 @@
   <link rel="mask-icon" href="/imgs/safari-pinned-tab.svg" color="#0ed3cf">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#0ed3cf">
-  <title>Piano LED Visualizer Presets</title>
+  <title>Piano-LED Visualizer Addon</title>
   <title>Move Button Example</title>
   <style>
     .absolute-button1 {
@@ -31,7 +31,7 @@
     .absolute-button4 {
       position: absolute;
       top: 15px;
-      left: calc(100% - 140px);
+      left: calc(100% - 120px);
     }
 
     body {
@@ -45,7 +45,7 @@
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
   </script>
 
-  <iframe src="/presets.php" width="100%" height="34" name="PRESETS" title="PLV Presets"frameborder="0"></iframe>
+  <iframe src="/presets.php" width="100%" height="36" name="PRESETS" title="PLV Presets"frameborder="0"></iframe>
 
   <style type=text/css>
     [data-url]::after {
