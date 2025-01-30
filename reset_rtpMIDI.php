@@ -5,5 +5,5 @@ sleep(1);
 ?>
 <script>
 alert("The rtpMIDI configuration was set to default!");
-window.top.location.href = 'index.php';
+window.top.location.href = 'rtpMIDI.php';
 </script>
