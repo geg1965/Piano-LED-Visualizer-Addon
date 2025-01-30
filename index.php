@@ -10,7 +10,7 @@
   <link rel="mask-icon" href="/imgs/safari-pinned-tab.svg" color="#0ed3cf">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#0ed3cf">
-  <title>Piano-LED Visualizer Addon</title>
+  <title>Piano LED Visualizer Addon</title>
   <title>Move Button Example</title>
   <style>
     .absolute-button {
