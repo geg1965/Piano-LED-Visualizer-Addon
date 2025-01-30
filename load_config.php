@@ -6,7 +6,7 @@ shell_exec("systemctl restart visualizer");
 sleep(10);
 ?>
 <script>
-var txt = "Preset <?php echo $config; ?> wurde geladen!";
+var txt = "Preset <?php echo $config; ?> was loaded!";
 alert(txt);
 window.top.location.href = 'index.php';
 </script>
