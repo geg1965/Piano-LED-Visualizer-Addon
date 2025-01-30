@@ -1,8 +1,17 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>PLV Presets</title>
+    <style>
+    iframe{
+      background-color:#DDDDDD;
+    }
+  </style>
+  </head>
 <body>
-<h1 style="color:blue;text-align:center;"><br>Configure static rtpMIDI connections</h1>
+<h1 style="color:blue;text-align:center;">Configure static rtpMIDI connections</h1>
 <h3>After a change of the rtpMIDI configuration, the appropriate input and playback port must be selected in the Piano LED Visualizer on the MIDI page and "CONNECT PORTS" must be executed.</h3><br>
+
 <form action="/set_rtpmidi.php">
   <label for="IP">IP.........................</label>
   <input type="number" style="width: 4em;" id="ip1" name="ip1" min="0" max="255" value="192" required="required"> .
@@ -23,20 +32,9 @@
   <input type="button" style="color:red;width: 9em;" value="Reset to defaults" onclick="location.href='reset_rtpMIDI.php';">
 </form>
 <br><br><br>
-<?php
-    $path="/etc/rtpmidid/";
-    $file="default.ini";
-
-    //read file contents
-    $content="
-        <h2>Actual rtpMIDI ini file in use ($file):</h2>
-            <code>
-                <pre>".htmlspecialchars(file_get_contents("$path/$file"))."</pre>
-            </code>";
-
-    //display
-    echo $content;
-?>
+<h2>The active rtpMIDI configuration:</h2>
+<iframe src="list_file.php?path=/etc/rtpmidid/&file=default.ini" width="98%" height="400px" style="border:1px solid black;">
+</iframe>
 
 <script>
 function enable_box(status)
