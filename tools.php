@@ -9,7 +9,7 @@
   </style>
   </head>
 <body>
-<h1 style="color:blue;text-align:center;">Raspberry PI OS  tools and infos</h1>
+<h1 style="color:blue;text-align:center;">Raspberry PI OS tools and infos</h1>
 
 <form action="/set_pw.php">
   <label for="port">Set password for user "plv" </label>
