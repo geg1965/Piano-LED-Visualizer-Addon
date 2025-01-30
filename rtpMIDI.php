@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PLV Presets</title>
+    <title>PLV rtpMIDI configuration</title>
     <style>
     iframe{
       background-color:#DDDDDD;
