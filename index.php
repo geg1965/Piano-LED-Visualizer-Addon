@@ -69,7 +69,7 @@
         <option value="https://flyingnotes.app">flyingnotes</option>
         <option value="ledemu2.html">LED Emulator</option>
       </optgroup>
-      <optgroup label="-------------------------" style="color: black; font-family: 'Times New Roman', Times, serif;">
+      <optgroup label="Info" style="color: black; font-family: 'Times New Roman', Times, serif;">
         <option value="">About</option>
         <option value="https://github.com/geg1965/Piano-LED-Visualizer-Addon/">GitHub</option>
         <option value="https://github.com/geg1965/Piano-LED-Visualizer-Addon/blob/master/README.md">Help</option>
