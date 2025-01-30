@@ -13,27 +13,27 @@
   <title>Piano-LED Visualizer Addon</title>
   <title>Move Button Example</title>
   <style>
-    .absolute-button1 {
+    .absolute-button {
       position: absolute;
       top: 55px;
       left: calc(50% - 80px);
     }
-    .absolute-button2 {
+    select {
       position: absolute;
-      top: 55px;
-      left: calc(50% - 193px);
-    }
-    .absolute-button3 {
-      position: absolute;
-      top: 55px;
-      left: calc(50% + 90px);
-    }
-    .absolute-button4 {
-      position: absolute;
-      top: 15px;
+      top: 8px;
       left: calc(100% - 120px);
+      width: 110px;
+      font-size: 12px;
+      border-radius: 10px;
+      padding: 6px 4px;
+      border: 1px solid #d7d7d7;
+      background: #fff;
+      background: rgba(0,0,0,0) url(./imgs/tools.png) no-repeat scroll 80px center/18px auto;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      color: #000000;
     }
-
     body {
       background-color: #1c87c9;
     }
@@ -45,7 +45,7 @@
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
   </script>
 
-  <iframe src="/presets.php" width="100%" height="36" name="PRESETS" title="PLV Presets"frameborder="0"></iframe>
+  <iframe src="/presets.php" width="100%" height="35" name="PRESETS" title="PLV Presets"frameborder="0"></iframe>
 
   <style type=text/css>
     [data-url]::after {
@@ -57,10 +57,24 @@
     }
   </style>
   <div> <iframe id="iFrame" src="LED-Piano.php"></iframe> </div>
-  <button class="absolute-button1"data-url="LED-Piano.php"type="button">Refresh </button>
-  <button class="absolute-button2"onclick="window.open('/ledemu2.html','location=no','width=300,height=400');" /> LED Emulator</button>
-  <button class="absolute-button3"onclick="window.open('https://flyingnotes.app','flyingnotes','width=800,height=400');" /> flyingnotes</button>
-  <button class="absolute-button4"data-url="rtpMIDI.php"type="button"> Set </button>
+  <button class="absolute-button"data-url="LED-Piano.php"type="button">Refresh </button>
+
+    <select id="tools" size="1" name="tools" style="color: white" onchange="window.open(this.value,'location=no','width=800,height=600');selectElement('tools', '');">
+      <optgroup label="System" style="color: black; font-family: 'Times New Roman', Times, serif;">
+        <option selected disabled hidden value="">Tools</option>
+        <option value="rtpMIDI.php">rtpMIDI</option>
+        <option value="./tools.php">System</option>
+      </optgroup>
+      <optgroup label="Other" style="color: black; font-family: 'Times New Roman', Times, serif;">
+        <option value="https://flyingnotes.app">flyingnotes</option>
+        <option value="ledemu2.html">LED Emulator</option>
+      </optgroup>
+      <optgroup label="-------------------------" style="color: black; font-family: 'Times New Roman', Times, serif;">
+        <option value="">About</option>
+        <option value="https://github.com/geg1965/Piano-LED-Visualizer-Addon/">GitHub</option>
+        <option value="https://github.com/geg1965/Piano-LED-Visualizer-Addon/blob/master/README.md">Help</option>
+      </optgroup>
+    </select>
 
   <script>
     Array.prototype.forEach.call(document.querySelectorAll('[data-url]'), function(elem) {
@@ -68,6 +82,10 @@
         iFrame.src = this.dataset.url
       })
     })
+    function selectElement(id, valueToSelect) {
+      let element = document.getElementById(id);
+      element.value = valueToSelect;
+    }
   </script>
 </body>
 </html>
