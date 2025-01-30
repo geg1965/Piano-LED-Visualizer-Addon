@@ -6,6 +6,7 @@ shell_exec("systemctl restart visualizer");
 sleep(10);
 ?>
 <script>
-setTimeout(function(){alert("Das Preset wurde geladen!")}, 0);
+var txt = "Preset <?php echo $config; ?> wurde geladen!";
+alert(txt);
 window.top.location.href = 'index.php';
 </script>
