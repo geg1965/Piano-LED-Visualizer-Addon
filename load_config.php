@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>PLV load configuration</title>
-  </head>
+<head>
+  <title>PLV load configuration</title>
+</head>
 <body>
   <?php
     $config = $_GET["config"];
@@ -12,7 +12,7 @@
     sleep(10);
   ?>
   <script>
-    var txt = "Preset <?php echo $config; ?> wurde geladen!";
+    var txt = "Preset <?php echo $config; ?> was loaded!";
     alert(txt);
     window.top.location.href = 'index.php';
   </script>
