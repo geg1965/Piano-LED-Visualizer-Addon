@@ -1,5 +1,5 @@
-# <a href="https://github.com/geg1965/Piano-LED-Visualizer-Addon"><img src="https://raw.githubusercontent.com/geg1965/Piano-LED-Visualizer-Addon/master/imgs/banner.png" align="left" height="60" width="100%" ><br/>
-Addon to save and load presets in [Piano-LED-Visualizer](https://github.com/onlaj/Piano-LED-Visualizer). It also allows to configure static rtpMIDI connections. The Addon will be available on port 8080 (for example http://[HOST-IP]:8080)
+# <a href="https://github.com/geg1965/Piano-LED-Visualizer-Addon"><img src="https://raw.githubusercontent.com/geg1965/Piano-LED-Visualizer-Addon/master/imgs/banner.png" align="center" height="60" width="100%" ><br/><br/>
+Addon to save and load presets in [Piano-LED-Visualizer](https://github.com/onlaj/Piano-LED-Visualizer). It also allows to configure static rtpMIDI connections, set password for the "plv" user and show WiFi and system informations. The Addon will be available on port 8080 (for example http://[HOST-IP]:8080)
 
 ##### <a href="[url](https://raw.githubusercontent.com/geg1965/Piano-LED-Visualizer-Addon/master/imgs/screenshot_1.png)"><img src="https://raw.githubusercontent.com/geg1965/Piano-LED-Visualizer-Addon/master/imgs/screenshot_1.png" align="left" height="400" width="100%" ></a><sup> Screenshot with the new buttons and dropdownmenus in top of the screen to save and load the PLV-settings and sequences. </sup>
 
