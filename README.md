@@ -1,11 +1,11 @@
-# <a href="https://github.com/geg1965/Piano-LED-Visualizer-Addon"><img src="https://raw.githubusercontent.com/geg1965/Piano-LED-Visualizer-Addon/master/imgs/banner.png" align="left" height="40" width="100%" ><br/>
+# <a href="https://github.com/geg1965/Piano-LED-Visualizer-Addon"><img src="https://raw.githubusercontent.com/geg1965/Piano-LED-Visualizer-Addon/master/imgs/banner.png" align="left" height="60" width="100%" ><br/>
 Addon to save and load presets in [Piano-LED-Visualizer](https://github.com/onlaj/Piano-LED-Visualizer). It also allows to configure static rtpMIDI connections. The Addon will be available on port 8080 (for example http://[HOST-IP]:8080)
 
-##### <a href="[url](https://raw.githubusercontent.com/geg1965/Piano-LED-Visualizer-Addon/master/imgs/screenshot_1.png)"><img src="https://raw.githubusercontent.com/geg1965/Piano-LED-Visualizer-Addon/master/imgs/screenshot_1.png" align="left" height="500" width="100%" ></a><sup> Screenshot with the new buttons and dropdownmenus in top of the screen to save and load the PLV-settings and sequences. </sup>
+##### <a href="[url](https://raw.githubusercontent.com/geg1965/Piano-LED-Visualizer-Addon/master/imgs/screenshot_1.png)"><img src="https://raw.githubusercontent.com/geg1965/Piano-LED-Visualizer-Addon/master/imgs/screenshot_1.png" align="left" height="400" width="100%" ></a><sup> Screenshot with the new buttons and dropdownmenus in top of the screen to save and load the PLV-settings and sequences. </sup>
 
 Configure static rtpMIDI connections to other rtpMIDI systems in your network...
 
-##### <a href="[url](https://raw.githubusercontent.com/geg1965/Piano-LED-Visualizer-Addon/master/imgs/screenshot_2.png)"><img src="https://raw.githubusercontent.com/geg1965/Piano-LED-Visualizer-Addon/master/imgs/screenshot_2.png" align="left" height="750" width="100%" ></a><sup> Screenshot of the static rtpMIDI connection setup. </sup>
+##### <a href="[url](https://raw.githubusercontent.com/geg1965/Piano-LED-Visualizer-Addon/master/imgs/screenshot_2.png)"><img src="https://raw.githubusercontent.com/geg1965/Piano-LED-Visualizer-Addon/master/imgs/screenshot_2.png" align="left" height="650" width="100%" ></a><sup> Screenshot of the static rtpMIDI connection setup. </sup>
 
 
 ## Prerequisits:
