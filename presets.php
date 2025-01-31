@@ -1,23 +1,64 @@
 <!doctype html>
-<html>
-  <head>
-    <title>PLV Presets</title>
-    <style>
-      @media (min-width: 861px) {
-        img {
-          display: flex;
-        }
+<html xmlns:x-transition="" lang="eng">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/imgs/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/imgs/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/imgs/favicon-16x16.png">
+  <link rel="mask-icon" href="/imgs/safari-pinned-tab.svg" color="#0ed3cf">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#0ed3cf">
+  <title>PLV Presets</title>
+  <style>
+    @media (min-width: 861px) {
+      .banner {
+        display: flex;
       }
-      @media (max-width: 860px) {
-        img {
-          display: none;
-        }
+      .banner_narrow {
+        display: none;
       }
+    }
+    @media (max-width: 860px) {
+      .banner {
+        display: none;
+      }
+      .banner_narrow {
+        display: flex;
+      }
+    }
+    @media (max-width: 590px) {
+      .banner_narrow {
+        display: none;
+      }
+    }
     .banner {
       position: absolute;
       top: 0px;
-      left: calc(50% - 200px);
+      left: calc(50% - 184px);
       justify-content: center;
+    }
+    .banner_narrow {
+      position: absolute;
+      top: 0px;
+      left: calc(50% - 43px);
+      justify-content: center;
+    }
+    @media (min-width: 471px) {
+      .wifi {
+        display: flex;
+      }
+    }
+    @media (max-width: 470px) {
+      .wifi {
+        display: none;
+      }
+    }
+    .wifi {
+      position: absolute;
+      top: -4px;
+      left: calc(100% - 230px);
     }
     select {
       position: absolute;
@@ -33,62 +74,77 @@
       -webkit-appearance: none;
       -moz-appearance: none;
       appearance: none;
-      color: #000000;
+      color: #FFFFFF;
     }
-    </style>
-  </head>
-  <body>
-    <select size="1" left="200px" name="load" style="color: white" onchange="document.location.href=this.value">
-      <optgroup label="Load Preset:" style="color: black; font-family: 'Times New Roman', Times, serif;">
-      <option selected disabled hidden value="">Load Preset</option>
-      <option value="./load_config.php?config=01">Preset 01</option>
-      <option value="./load_config.php?config=02">Preset 02</option>
-      <option value="./load_config.php?config=03">Preset 03</option>
-      <option value="./load_config.php?config=04">Preset 04</option>
-      <option value="./load_config.php?config=05">Preset 05</option>
-      <option value="./load_config.php?config=06">Preset 06</option>
-      <option value="./load_config.php?config=07">Preset 07</option>
-      <option value="./load_config.php?config=08">Preset 08</option>
-      <option value="./load_config.php?config=09">Preset 09</option>
-      <option value="./load_config.php?config=10">Preset 10</option>
-      <option value="./load_config.php?config=11">Preset 11</option>
-      <option value="./load_config.php?config=12">Preset 12</option>
-      <option value="./load_config.php?config=13">Preset 13</option>
-      <option value="./load_config.php?config=14">Preset 14</option>
-      <option value="./load_config.php?config=15">Preset 15</option>
-      <option value="./load_config.php?config=16">Preset 16</option>
-      <option value="./load_config.php?config=17">Preset 17</option>
-      <option value="./load_config.php?config=18">Preset 18</option>
-      <option value="./load_config.php?config=19">Preset 19</option>
-      </optgroup>
-    </select>
-&nbsp;
-    <select size="1" name="save" style="color: white; left: 125px;" onchange="document.location.href=this.value">
-      <optgroup label="Save Preset" style="color: black; font-family: 'Times New Roman', Times, serif;">
-      <option selected disabled hidden value="">Save Preset</option>
-      <option value="./save_config.php?config=01">Preset 01</option>
-      <option value="./save_config.php?config=02">Preset 02</option>
-      <option value="./save_config.php?config=03">Preset 03</option>
-      <option value="./save_config.php?config=04">Preset 04</option>
-      <option value="./save_config.php?config=05">Preset 05</option>
-      <option value="./save_config.php?config=06">Preset 06</option>
-      <option value="./save_config.php?config=07">Preset 07</option>
-      <option value="./save_config.php?config=08">Preset 08</option>
-      <option value="./save_config.php?config=09">Preset 09</option>
-      <option value="./save_config.php?config=10">Preset 10</option>
-      <option value="./save_config.php?config=11">Preset 11</option>
-      <option value="./save_config.php?config=12">Preset 12</option>
-      <option value="./save_config.php?config=13">Preset 13</option>
-      <option value="./save_config.php?config=14">Preset 14</option>
-      <option value="./save_config.php?config=15">Preset 15</option>
-      <option value="./save_config.php?config=16">Preset 16</option>
-      <option value="./save_config.php?config=17">Preset 17</option>
-      <option value="./save_config.php?config=18">Preset 18</option>
-      <option value="./save_config.php?config=19">Preset 19</option>
-      </optgroup>
-    </select>
-    <div class="banner">
-      <img src="./imgs/banner.png" height="25" width="400">
-    </div>
-  </body>
+  </style>
+</head>
+<body>
+  <script>
+    function selectActionLoad(evt) {
+      let preset = `./load_config.php?config=${evt.target.value}`;
+      document.location.href = (preset);
+    }
+    function selectActionSave(evt) {
+      let preset = `./save_config.php?config=${evt.target.value}`;
+      document.location.href = (preset);
+    }
+  </script>
+  <select id="load" size="1" name="load" style="left: 5px" onchange="selectActionLoad(event)">
+    <optgroup label="Load Preset:" style="color: black; font-family: 'Times New Roman', Times, serif;">
+    <option selected disabled hidden value="">Load Preset</option>
+    <option value="01">Preset 01</option>
+    <option value="02">Preset 02</option>
+    <option value="03">Preset 03</option>
+    <option value="04">Preset 04</option>
+    <option value="05">Preset 05</option>
+    <option value="06">Preset 06</option>
+    <option value="07">Preset 07</option>
+    <option value="08">Preset 08</option>
+    <option value="09">Preset 09</option>
+    <option value="10">Preset 10</option>
+    <option value="11">Preset 11</option>
+    <option value="12">Preset 12</option>
+    <option value="13">Preset 13</option>
+    <option value="14">Preset 14</option>
+    <option value="15">Preset 15</option>
+    <option value="16">Preset 16</option>
+    <option value="17">Preset 17</option>
+    <option value="18">Preset 18</option>
+    <option value="19">Preset 19</option>
+    </optgroup>
+  </select>
+  <select id="save" size="1" name="save" style="left: 125px" onchange="selectActionSave(event)">
+    <optgroup label="Save Preset:" style="color: black; font-family: 'Times New Roman', Times, serif;">
+    <option selected disabled hidden value="">Save Preset</option>
+    <option value="01">Preset 01</option>
+    <option value="02">Preset 02</option>
+    <option value="03">Preset 03</option>
+    <option value="04">Preset 04</option>
+    <option value="05">Preset 05</option>
+    <option value="06">Preset 06</option>
+    <option value="07">Preset 07</option>
+    <option value="08">Preset 08</option>
+    <option value="09">Preset 09</option>
+    <option value="10">Preset 10</option>
+    <option value="11">Preset 11</option>
+    <option value="12">Preset 12</option>
+    <option value="13">Preset 13</option>
+    <option value="14">Preset 14</option>
+    <option value="15">Preset 15</option>
+    <option value="16">Preset 16</option>
+    <option value="17">Preset 17</option>
+    <option value="18">Preset 18</option>
+    <option value="19">Preset 19</option>
+    </optgroup>
+  </select>
+  <div class="banner">
+    <img src="./imgs/banner.png" height="25" width="369">
+  </div>
+  <div class="banner_narrow">
+    <img src="./imgs/banner_narrow.png" height="25" width="86">
+  </div>
+  <div class="wifi">
+     <iframe src="/tools/wifi.php" width="100" height="35" name="PRESETS" title="PLV Presets"frameborder="0"></iframe>
+  </div>
+</body>
 </html>
