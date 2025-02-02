@@ -10,161 +10,116 @@
   <link rel="mask-icon" href="/imgs/safari-pinned-tab.svg" color="#0ed3cf">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#0ed3cf">
-  <title>Piano LED Visualizer @-on</title>
+  <title>PLV Presets</title>
   <style>
-    .button1 {
-      position: absolute;
-      top: 55px;
-      left: calc(50% - 80px);
-    }
-    @media (min-width: 500px) {
-      .wifi {
-        width: 110px;
-        left: calc(100% - 240px);
-        background: #fff;
-        background: rgba(0,0,0,0) url(./imgs/wifi.png) no-repeat scroll 80px center/18px auto;
+    @media (min-width: 861px) {
+      .banner {
+        display: flex;
+      }
+      .banner_narrow {
+        display: none;
       }
     }
-    @media (max-width: 500px) {
+    @media (max-width: 860px) {
+      .banner {
+        display: none;
+      }
+      .banner_narrow {
+        display: flex;
+      }
+    }
+    @media (max-width: 590px) {
+      .banner_narrow {
+        display: none;
+      }
+    }
+    .banner {
+      position: absolute;
+      top: 0px;
+      left: calc(50% - 184px);
+      justify-content: center;
+    }
+    .banner_narrow {
+      position: absolute;
+      top: 0px;
+      left: calc(50% - 43px);
+      justify-content: center;
+    }
+    @media (min-width: 471px) {
       .wifi {
-        width: 36px;
-        left: calc(100% - 164px);
-        background: #fff;
-        background: rgba(0,0,0,0) url(./imgs/wifi.png) no-repeat scroll 8px center/18px auto;
+        display: flex;
+      }
+    }
+    @media (max-width: 470px) {
+      .wifi {
+        display: none;
       }
     }
     .wifi {
       position: absolute;
-      top: 8px;
-      font-size: 12px;
-      border-radius: 10px;
-      padding: 6px 4px;
-      border: 1px solid #d7d7d7;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-      color: #000000;
+      top: -4px;
+      left: calc(100% - 230px);
     }
-    .tools {
+    select {
       position: absolute;
-      top: 8px;
-      left: calc(100% - 120px);
+      top: 0px;
+      left: 5px;
       width: 110px;
       font-size: 12px;
       border-radius: 10px;
       padding: 6px 4px;
       border: 1px solid #d7d7d7;
       background: #fff;
-      background: rgba(0,0,0,0) url(./imgs/tools.png) no-repeat scroll 80px center/18px auto;
+      background: rgba(0,0,0,0) url(./imgs/favicon-16x16.png) no-repeat scroll 80px center/18px auto;
       -webkit-appearance: none;
       -moz-appearance: none;
       appearance: none;
-      color: #000000;
+      color: #FFFFFF;
     }
-    body {
-      background-color: #1c87c9;
-    }
-    #message-box {
-    top:2%;
-
-    left:10%;
-    width:80%;
-
-    border: 1px solid black;
-    background-color:#FFFFFF;
-    position:absolute;
-    z-index:10000;
-}
-
-.disabled-body {
-    background-color: rgba(0,0,0,0.5);
-}
-
-.fadeable {
-    opacity: 1;
-    transition: opacity 3s;
-}
-
-.fade {
-    opacity: 0 !important;
-}
   </style>
 </head>
-
 <body>
   <script>
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    function selectActionLoad(evt) {
+      let preset = `./load_config.php?config=${evt.target.value}`;
+      document.location.href = (preset);
+    }
+    function selectActionSave(evt) {
+      let preset = `./save_config.php?config=${evt.target.value}`;
+      document.location.href = (preset);
+    }
   </script>
-  <iframe src="/presets.php" width="100%" height="36" name="PRESETS" title="PLV Presets"frameborder="0"></iframe>
-  <style type=text/css>
-    [data-url]::after {
-      content: attr(data-url)
-    }
-    #iFrame {
-      min-height: 2000px;
-      width: 100%;
-    }
-  </style>
-  <div> <iframe id="iFrame" src="LED-Piano.php"></iframe> </div>
-  <button class="button1"data-url="LED-Piano.php"type="button">Refresh </button>
-  <select class="tools" id="tools" size="1" name="tools" style="color: white;" onchange="selectAction(event); selectElement('tools', '');">
-    <optgroup label="System" style="color: black; font-family: 'Times New Roman', Times, serif;">
-      <option selected disabled hidden value="">Tools</option>
-      <option>rtpMIDI</option>
-      <option>System</option>
-    </optgroup>
-    <optgroup label="Other" style="color: black; font-family: 'Times New Roman', Times, serif;">
-      <option>flyingnotes</option>
-      <option>LED Emulator</option>
-    </optgroup>
-    <optgroup label="Info" style="color: black; font-family: 'Times New Roman', Times, serif;">
-      <option>About</option>
-      <option>GitHub</option>
-      <option>Help</option>
-    </optgroup>
-  </select>
-  <select class="wifi" id="wifi" size="1" name="wifi" style="color: black; font-family: 'Times New Roman', Times, serif; text-align: center;" onchange="selectAction(event); selectElement('wifi', '');">
-    <option selected disabled hidden value=""></option>
-    <option>WiFi info</option>
-  </select>
-  <script>
-    Array.prototype.forEach.call(document.querySelectorAll('[data-url]'), function(elem) {
-      elem.addEventListener('click', function(e) {
-        iFrame.src = this.dataset.url
-      })
-    })
-    function selectElement(id, valueToSelect) {
-      let element = document.getElementById(id);
-      element.value = valueToSelect;
-    }
-    function selectAction(evt) {
-      switch (evt.target.value) {
-        case "WiFi info":
-          window.open('./tools/wifi_info.php','tools','width=800,height=600');
-          break;
-        case "rtpMIDI":
-          window.open('./tools/rtpMIDI.php', 'tools', 'width=800,height=600');
-          break;
-        case "System":
-          window.open('./tools/system.php', 'tools', 'width=800,height=600');
-          break;
-        case "flyingnotes":
-          window.open('https://flyingnotes.app', 'flyingnotes', 'width=1200,height=500');
-          break;
-        case "LED Emulator":
-          window.open('ledemu2.html', 'emulator', 'width=400,height=600');
-          break;
-        case "About":
-          alert('Piano LED Visualizer @-on v1.1.1\n\nMade by GEG1965 [© 2025]');
-          break;
-        case "GitHub":
-          window.open('https://github.com/geg1965/Piano-LED-Visualizer-Addon/');
-          break;
-        case "Help":
-          window.open('https://github.com/geg1965/Piano-LED-Visualizer-Addon/blob/master/README.md');
-          break;
+  <select id="load" size="1" name="load" style="left: 5px" onchange="selectActionLoad(event)">
+    <optgroup label="Load Preset:" style="color: gray; font-family: 'Times New Roman', Times, serif;">
+    <option selected disabled hidden value="">Load Preset</option>
+    <?php
+      for ($i = 1; $i <= 127; $i++) {
+        echo "<option style=\"color: black\" value=\"$i\">Preset $i</option>";
       }
-    }
-  </script>
+    ?>
+    </optgroup>
+    <optgroup label="Read-Only:" style="color: gray; font-family: 'Times New Roman', Times, serif;">
+    <option style="color: black" value="default">Default</option>
+    </optgroup>
+  </select>
+  <select id="save" size="1" name="save" style="left: 125px" onchange="selectActionSave(event)">
+    <optgroup label="Save Preset:" style="color: gray; font-family: 'Times New Roman', Times, serif;">
+    <option selected disabled hidden value="">Save Preset</option>
+    <?php
+      for ($i = 1; $i <= 127; $i++) {
+        echo "<option style=\"color: black\" value=\"$i\">Preset $i</option>";
+      }
+    ?>
+    </optgroup>
+  </select>
+  <div class="banner">
+    <img src="./imgs/banner.png" height="25" width="369">
+  </div>
+  <div class="banner_narrow">
+    <img src="./imgs/banner_narrow.png" height="25" width="86">
+  </div>
+  <div class="wifi">
+     <iframe src="/tools/wifi.php" width="100" height="35" name="PRESETS" title="PLV Presets"frameborder="0"></iframe>
+  </div>
 </body>
 </html>
