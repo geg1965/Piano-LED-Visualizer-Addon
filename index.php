@@ -140,7 +140,7 @@
     function selectAction(evt) {
       switch (evt.target.value) {
         case "WiFi info":
-          window.open('./tools/wifi.php','','width=800,height=600');
+          window.open('./tools/wifi_info.php','tools','width=800,height=600');
           break;
         case "rtpMIDI":
           window.open('./tools/rtpMIDI.php', 'tools', 'width=800,height=600');
@@ -149,13 +149,13 @@
           window.open('./tools/system.php', 'tools', 'width=800,height=600');
           break;
         case "flyingnotes":
-          window.open('https://flyingnotes.app', 'flyingnotes', 'width=800,height=600');
+          window.open('https://flyingnotes.app', 'flyingnotes', 'width=1200,height=500');
           break;
         case "LED Emulator":
           window.open('ledemu2.html', 'emulator', 'width=400,height=600');
           break;
         case "About":
-          alert('Piano LED Visualizer @-on v1.0');
+          alert('Piano LED Visualizer @-on v1.1.1\n\nMade by GEG1965 [© 2025]');
           break;
         case "GitHub":
           window.open('https://github.com/geg1965/Piano-LED-Visualizer-Addon/');
