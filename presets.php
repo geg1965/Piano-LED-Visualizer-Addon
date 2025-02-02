@@ -90,51 +90,26 @@
     }
   </script>
   <select id="load" size="1" name="load" style="left: 5px" onchange="selectActionLoad(event)">
-    <optgroup label="Load Preset:" style="color: black; font-family: 'Times New Roman', Times, serif;">
+    <optgroup label="Load Preset:" style="color: gray; font-family: 'Times New Roman', Times, serif;">
     <option selected disabled hidden value="">Load Preset</option>
-    <option value="01">Preset 01</option>
-    <option value="02">Preset 02</option>
-    <option value="03">Preset 03</option>
-    <option value="04">Preset 04</option>
-    <option value="05">Preset 05</option>
-    <option value="06">Preset 06</option>
-    <option value="07">Preset 07</option>
-    <option value="08">Preset 08</option>
-    <option value="09">Preset 09</option>
-    <option value="10">Preset 10</option>
-    <option value="11">Preset 11</option>
-    <option value="12">Preset 12</option>
-    <option value="13">Preset 13</option>
-    <option value="14">Preset 14</option>
-    <option value="15">Preset 15</option>
-    <option value="16">Preset 16</option>
-    <option value="17">Preset 17</option>
-    <option value="18">Preset 18</option>
-    <option value="19">Preset 19</option>
+    <?php
+      for ($i = 1; $i <= 127; $i++) {
+        echo "<option style=\"color: black\" value=\"$i\">Preset $i</option>";
+      }
+    ?>
+    </optgroup>
+    <optgroup label="Read-Only:" style="color: gray; font-family: 'Times New Roman', Times, serif;">
+    <option style="color: black" value="default">Default</option>
     </optgroup>
   </select>
   <select id="save" size="1" name="save" style="left: 125px" onchange="selectActionSave(event)">
-    <optgroup label="Save Preset:" style="color: black; font-family: 'Times New Roman', Times, serif;">
+    <optgroup label="Save Preset:" style="color: gray; font-family: 'Times New Roman', Times, serif;">
     <option selected disabled hidden value="">Save Preset</option>
-    <option value="01">Preset 01</option>
-    <option value="02">Preset 02</option>
-    <option value="03">Preset 03</option>
-    <option value="04">Preset 04</option>
-    <option value="05">Preset 05</option>
-    <option value="06">Preset 06</option>
-    <option value="07">Preset 07</option>
-    <option value="08">Preset 08</option>
-    <option value="09">Preset 09</option>
-    <option value="10">Preset 10</option>
-    <option value="11">Preset 11</option>
-    <option value="12">Preset 12</option>
-    <option value="13">Preset 13</option>
-    <option value="14">Preset 14</option>
-    <option value="15">Preset 15</option>
-    <option value="16">Preset 16</option>
-    <option value="17">Preset 17</option>
-    <option value="18">Preset 18</option>
-    <option value="19">Preset 19</option>
+    <?php
+      for ($i = 1; $i <= 127; $i++) {
+        echo "<option style=\"color: black\" value=\"$i\">Preset $i</option>";
+      }
+    ?>
     </optgroup>
   </select>
   <div class="banner">
