@@ -10,12 +10,12 @@
   </head>
 <body>
   <h1 style="color:blue;text-align:center;">Configure static rtpMIDI connections</h1>
-  <h3>After a change of the rtpMIDI configuration, the appropriate input and playback port must be selected in the Piano LED Visualizer on the MIDI page and "CONNECT PORTS" must be executed.</h3>
+  <h3 style="text-align:center;">After a change of the rtpMIDI configuration, the appropriate input and playback port must be selected in the Piano LED Visualizer on the MIDI page and "CONNECT PORTS" must be executed.</h3>
   <iframe src="rtpMIDI_resp.php" width="98%" height="100px" style="border:1px solid black;">
   </iframe>
   <h3></h3><br>
-  <form action="rtpMIDI_set.php">
-    <label for="IP">IP.........................</label>
+  <form action="rtpMIDI_set.php" style="text-align:center;">
+    <label for="IP">IP...........................</label>
     <input type="number" style="width: 4em;" id="ip1" name="ip1" min="0" max="255" value="192" required="required"> .
     <input type="number" style="width: 4em;" id="ip2" name="ip2" min="0" max="255" value="168" required="required"> .
     <input type="number" style="width: 4em;" id="ip3" name="ip3" min="0" max="255" value="0" required="required"> .
