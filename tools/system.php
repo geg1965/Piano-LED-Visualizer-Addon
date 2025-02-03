@@ -11,14 +11,13 @@
 <body>
   <div id="maincontainer ">
   <h1 style="color:blue;text-align:center;">Raspberry PI OS tools and infos</h1>
-
-  <form action="set_pw.php">
+  <form style="text-align:center;" action="set_pw.php">
     <label for="port">Enter new password for user "plv" </label>
     <input type="password" id="password" name="password" placeholder="empty for default">
     <input type="submit" style="color:red;width: 9em;" value="set password">
     <input type="checkbox" onclick="myFunction()">Show Password
   </form>
-  <br><br>
+  <br>
   <h2>OS Information:</h2>
   <iframe src="list_file.php?path=/etc/&file=os-release" width="98%" height="220px" style="border:1px solid black;">
   </iframe>
