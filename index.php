@@ -113,6 +113,7 @@
       <option>rtpMIDI</option>
       <option>btMIDI</option>
       <option>System</option>
+      <option>Update</option>
     </optgroup>
     <optgroup label="Other" style="color: black; font-family: 'Times New Roman', Times, serif;">
       <option>flyingnotes</option>
@@ -151,6 +152,10 @@
           break;
         case "System":
           window.open('./tools/system.php', 'tools', 'width=800,height=600');
+          break;
+        case "Update":
+          var url= "./tools/update.php";
+          window.location = url;
           break;
         case "flyingnotes":
           window.open('https://flyingnotes.app', 'flyingnotes', 'width=1200,height=500');
