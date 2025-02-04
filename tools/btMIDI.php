@@ -9,6 +9,8 @@
     </style>
   </head>
 <body>
+  <img style="float:left;width:100px;height:38px;" src="/imgs/btMIDI.png">
+  <img style="float:right;width:100px;height:38px;" src="/imgs/empty.png">
   <h1 style="color:blue;text-align:center;">Configure Bluetooth connections</h1>
   <h3 style="text-align:center;">After a change of the Bluetooth MIDI connection, the appropriate input and playback port must be selected in the Piano LED Visualizer on the MIDI page and "CONNECT PORTS" must be executed.</h3><br>
   <form action="btMIDI_set.php" style="text-align:center;">
