@@ -37,6 +37,8 @@
     $color2 = "blue";
   }
   ?>
+  <img style="float:left;width:100px;height:38px;" src="/imgs/wifi_info.png">
+  <img style="float:right;width:100px;height:38px;" src="/imgs/empty.png">
   <h1 style="color:blue;text-align:center;">WLAN Informations</h1>
   <font size="1" color="<?php echo $color1; ?>">WiFi signal -<?php echo $wlan; ?>dBm</font>
   <svg width="100%" height="24">
