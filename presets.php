@@ -55,6 +55,30 @@
         display: none;
       }
     }
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    .loader {
+      position: absolute;
+      top: 14px;
+      left: 94px;
+      display: none;
+      transform: translate(-50%, -50%);
+    }
+    .loading {
+      border: 3px solid #ccc;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border-top-color: #1ecd97;
+      border-left-color: #1ecd97;
+      animation: spin 1s infinite ease-in;
+    }
     .wifi {
       position: absolute;
       top: -4px;
@@ -79,8 +103,9 @@
   </style>
 </head>
 <body>
-  <script>
+   <script>
     function selectActionLoad(evt) {
+      document.getElementsByClassName("loader")[0].style.display = "block";
       let preset = `./load_config.php?config=${evt.target.value}`;
       document.location.href = (preset);
     }
@@ -89,6 +114,10 @@
       document.location.href = (preset);
     }
   </script>
+  <div class="loader">
+    <div class="loading">
+    </div>
+  </div>
   <select id="load" size="1" name="load" style="left: 5px" onchange="selectActionLoad(event)">
     <optgroup label="Load Preset:" style="color: gray; font-family: 'Times New Roman', Times, serif;">
     <option selected disabled hidden value="">Load Preset</option>
