@@ -22,7 +22,7 @@
         width: 110px;
         left: calc(100% - 240px);
         background: #fff;
-        background: rgba(0,0,0,0) url(./imgs/wifi.png) no-repeat scroll 80px center/18px auto;
+        background: rgba(0,0,0,0) url(./imgs/wifi_small.png) no-repeat scroll 80px center/18px auto;
       }
     }
     @media (max-width: 500px) {
@@ -30,7 +30,7 @@
         width: 36px;
         left: calc(100% - 164px);
         background: #fff;
-        background: rgba(0,0,0,0) url(./imgs/wifi.png) no-repeat scroll 8px center/18px auto;
+        background: rgba(0,0,0,0) url(./imgs/wifi_small.png) no-repeat scroll 8px center/18px auto;
       }
     }
     .wifi {
