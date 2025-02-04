@@ -10,6 +10,8 @@
 </head>
 <body>
   <div id="maincontainer ">
+  <img style="float:left;width:100px;height:38px;" src="/imgs/system.png">
+  <img style="float:right;width:100px;height:38px;" src="/imgs/empty.png">
   <h1 style="color:blue;text-align:center;">Raspberry PI OS tools and infos</h1>
   <form style="text-align:center;" action="set_pw.php">
     <label for="port">Enter new password for user "plv" </label>
