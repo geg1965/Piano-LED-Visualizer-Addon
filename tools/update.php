@@ -3,7 +3,7 @@
   shell_exec("rsync -r ./update/* ../../php; rm -Rf update");
 ?>
 <script>
-  var txt = "Upadate completed!";
+  var txt = "Update completed!";
   alert(txt);
   window.top.location.href = '/index.php';
 </script>
