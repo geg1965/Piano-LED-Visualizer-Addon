@@ -9,7 +9,7 @@
     </style>
   </head>
 <body>
-  <img style="float:left;width:100px;height:38px;" src="/imgs/etpMIDI.png">
+  <img style="float:left;width:100px;height:38px;" src="/imgs/rtpMIDI.png">
   <img style="float:right;width:100px;height:38px;" src="/imgs/empty.png">
   <h1 style="color:blue;text-align:center;">Configure static rtpMIDI connections</h1>
   <h3 style="text-align:center;">After a change of the rtpMIDI configuration, the appropriate input and playback port must be selected in the Piano LED Visualizer on the MIDI page and "CONNECT PORTS" must be executed.</h3>
