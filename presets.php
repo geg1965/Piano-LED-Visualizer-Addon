@@ -66,7 +66,7 @@
     .loader {
       position: absolute;
       top: 14px;
-      left: 94px;
+      left: 95px;
       display: none;
       transform: translate(-50%, -50%);
     }
