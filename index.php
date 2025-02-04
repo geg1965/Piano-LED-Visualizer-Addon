@@ -125,7 +125,7 @@
       <option>Help</option>
     </optgroup>
   </select>
-  <select class="wifi" id="wifi" size="1" name="wifi" style="color: black; font-family: 'Times New Roman', Times, serif; text-align: center;" onchange="selectAction(event); selectElement('tools', '');">
+  <select class="wifi" id="wifi" size="1" name="wifi" style="color: black; font-family: 'Times New Roman', Times, serif; text-align: center;" onchange="selectAction(event); selectElement('wifi', '');">
     <option selected disabled hidden value=""></option>
     <option>WiFi info</option>
   </select>
