@@ -125,7 +125,7 @@
       <option>Help</option>
     </optgroup>
   </select>
-  <select class="wifi" id="wifi" size="1" name="wifi" style="color: black; font-family: 'Times New Roman', Times, serif; text-align: center;" onchange="selectAction(event); selectElement('wifi', '');">
+  <select class="wifi" id="wifi" size="1" name="wifi" style="color: black; font-family: 'Times New Roman', Times, serif; text-align: center;" onchange="selectAction(event); fi', '');">
     <option selected disabled hidden value=""></option>
     <option>WiFi info</option>
   </select>
@@ -154,8 +154,10 @@
           window.open('./tools/system.php', 'tools', 'width=800,height=600');
           break;
         case "Update":
-          var url= "./tools/update.php";
-          window.location = url;
+          if (confirm('Are you sure you want to update Piano LED Visualizer @-on?')) {
+            var url= "./tools/update.php";
+            window.location = url;
+          }
           break;
         case "flyingnotes":
           window.open('https://flyingnotes.app', 'flyingnotes', 'width=1200,height=500');
@@ -170,7 +172,7 @@
           window.open('https://github.com/geg1965/Piano-LED-Visualizer-Addon/');
           break;
         case "Help":
-          window.open('https://github.com/geg1965/Piano-LED-Visualizer-Addon/blob/master/README.md');
+          window.open('https://github.com/geg1965/Piano-LED-Visualizer-Addon/blob/master/Docs/HELP.md');
           break;
       }
     }
