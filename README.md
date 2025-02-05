@@ -5,7 +5,7 @@ Addon for saving and loading presets in the [Piano-LED-Visualizer](https://githu
 
 Configure static rtpMIDI connections to other rtpMIDI systems in your network...
 
-##### <a href="[url](https://raw.githubusercontent.com/geg1965/Piano-LED-Visualizer-Addon/master/imgs/screenshot_2.png)"><img src="https://raw.githubusercontent.com/geg1965/Piano-LED-Visualizer-Addon/master/Docs/pics/screenshot_2.png" align="left" height="650" width="100%" ></a><sup> Screenshot of the static rtpMIDI connection setup. </sup>
+##### <a href="[url](https://raw.githubusercontent.com/geg1965/Piano-LED-Visualizer-Addon/master/imgs/screenshot_2.png)"><img src="https://raw.githubusercontent.com/geg1965/Piano-LED-Visualizer-Addon/master/Docs/pics/screenshot_02.png" align="left" height="650" width="100%" ></a><sup> @-on screenshots. </sup>
 
 
 ## Prerequisits:
