@@ -1,0 +1,14 @@
+#!/bin/bash
+CFGS="./webinterface/php/cfgs"
+CONFIG="./config"
+SETTING=`cat ./webinterface/php/tools/inis/addon.ini`
+
+if [ "$2" == "$SETTING" ]; then
+  PRG=`expr $1 + 1`
+  if [ -f "$CFGS/settings.xml.$PRG" ]; then
+    cp $CFGS/settings.xml.$PRG $CONFIG/settings.xml
+    cp $CFGS/sequences.xml.$PRG $CONFIG/sequences.xml
+    systemctl restart visualizer
+    sleep 4
+  fi
+fi
