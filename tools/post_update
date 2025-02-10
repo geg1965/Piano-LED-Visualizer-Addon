@@ -1,0 +1,23 @@
+#!/bin/bash
+STRING1="# Midi control change event"
+STRING2="# Midi program change event"
+FILE="visualizer.py"
+PLVPATH="/home/Piano-LED-Visualizer"
+
+if [ -f $PLVPATH/$FILE ]; then
+  if [ `grep -c "$STRING2" "$PLVPATH/$FILE"` == 0 ]; then
+    cp "$PLVPATH/$FILE" "$PLVPATH/$FILE.bak"
+    mv "$PLVPATH/webinterface/php/tools/prgchange" "$PLVPATH"
+    chmod +x "$PLVPATH/prgchange"
+    awk '/import os/ {print; print "import subprocess"; next}1' "$PLVPATH/$FILE" > temp && mv temp "$PLVPATH/$FILE"
+    awk -v pat="$STRING1" '$0~pat{
+      print "        # Midi program change event";
+      print "        elif msg.type == \"program_change\":";
+      print "            program = msg.program";
+      print "            channel = find_between(str(msg), \"channel=\", \" \")";
+      print "            subprocess.run([\"/home/Piano-LED-Visualizer/prgchange\", str(program), str(channel)])";
+      print ""; print; next
+    }1' "$PLVPATH/$FILE" > temp && mv temp "$PLVPATH/$FILE"
+    chmod 777 "$PLVPATH/$FILE"
+  fi
+fi
