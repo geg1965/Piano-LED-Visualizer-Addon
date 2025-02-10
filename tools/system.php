@@ -15,9 +15,10 @@
   <h1 style="color:blue;text-align:center;">Raspberry PI OS tools and infos</h1>
   <form style="text-align:center;" action="set_pw.php">
     <label for="password">Enter new password for user "plv" </label>
-    <input type="password" id="password" name="password" placeholder="empty for default">
-    <input type="submit" style="color:red;width: 9em;" value="set password">
-    <input type="checkbox" onclick="myFunction()">Show Password
+    <input type="password" style="width: 9em;" id="id_password" name="password" placeholder="empty for default">
+    <img src="/imgs/eye.png" width="1%" height="1%" style="display: inline;margin-left: -1.5%;vertical-align: middle" id="togglePassword">
+    <label for="submit">&nbsp</label>
+    <input type="submit" style="color:red;width: 7em;" value="set password">
   </form><br>
 
   <form style="text-align:center;" method="post" action="">
@@ -55,14 +56,17 @@
   <?php $uptime = shell_exec("uptime");?>
   <font size="1" color="gray">Uptime: <?= $uptime ?></font>
   <script>
-    function myFunction() {
-      var x = document.getElementById("password");
-      if (x.type === "password") {
-        x.type = "text";
+    const togglePassword = document.querySelector('#togglePassword');
+    const password = document.querySelector('#id_password');
+    togglePassword.addEventListener('click', function (e) {
+      const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+      password.setAttribute('type', type);
+      if (togglePassword.src.match("/imgs/eyeslash.png")) {
+        togglePassword.src = "/imgs/eye.png";
       } else {
-        x.type = "password";
+        togglePassword.src = "/imgs/eyeslash.png";
       }
-    }
+    });
   </script>
 </body>
 </html>
