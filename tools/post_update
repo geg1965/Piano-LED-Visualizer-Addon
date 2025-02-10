@@ -7,8 +7,6 @@ PLVPATH="/home/Piano-LED-Visualizer"
 if [ -f $PLVPATH/$FILE ]; then
   if [ `grep -c "$STRING2" "$PLVPATH/$FILE"` == 0 ]; then
     cp "$PLVPATH/$FILE" "$PLVPATH/$FILE.bak"
-    mv "$PLVPATH/webinterface/php/tools/prgchange" "$PLVPATH"
-    chmod +x "$PLVPATH/prgchange"
     awk '/import os/ {print; print "import subprocess"; next}1' "$PLVPATH/$FILE" > temp && mv temp "$PLVPATH/$FILE"
     awk -v pat="$STRING1" '$0~pat{
       print "        # Midi program change event";
@@ -20,4 +18,6 @@ if [ -f $PLVPATH/$FILE ]; then
     }1' "$PLVPATH/$FILE" > temp && mv temp "$PLVPATH/$FILE"
     chmod 777 "$PLVPATH/$FILE"
   fi
+  mv "$PLVPATH/webinterface/php/tools/prgchange" "$PLVPATH"
+  chmod +x "$PLVPATH/prgchange"
 fi
