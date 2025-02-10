@@ -122,7 +122,7 @@
     <optgroup label="Load Preset:" style="color: gray; font-family: 'Times New Roman', Times, serif;">
     <option selected disabled hidden value="">Load Preset</option>
     <?php
-      for ($i = 1; $i <= 127; $i++) {
+      for ($i = 1; $i <= 128; $i++) {
         echo "<option style=\"color: black\" value=\"$i\">Preset $i</option>";
       }
     ?>
@@ -135,7 +135,7 @@
     <optgroup label="Save Preset:" style="color: gray; font-family: 'Times New Roman', Times, serif;">
     <option selected disabled hidden value="">Save Preset</option>
     <?php
-      for ($i = 1; $i <= 127; $i++) {
+      for ($i = 1; $i <= 128; $i++) {
         echo "<option style=\"color: black\" value=\"$i\">Preset $i</option>";
       }
     ?>
