@@ -6,6 +6,10 @@
     iframe{
       background-color:#DDDDDD;
     }
+    input[type="password"]::-ms-reveal,
+    input[type="password"]::-ms-clear {
+      display: none;
+    }
   </style>
 </head>
 <body>
@@ -15,8 +19,8 @@
   <h1 style="color:blue;text-align:center;">Raspberry PI OS tools and infos</h1>
   <form style="text-align:center;" action="set_pw.php">
     <label for="password">Enter new password for user "plv" </label>
-    <input type="password" style="width: 9em;" id="id_password" name="password" placeholder="empty for default">
-    <img src="/imgs/eye.png" width="1%" height="1%" style="display: inline;margin-left: -1.5%;vertical-align: middle" id="togglePassword">
+    <input type="password" style="width: 10em;" id="id_password" name="password" placeholder="empty for default" maxlength="15">
+    <img src="/imgs/eye.png" width="20px" height="20px" style="display: inline;margin-left: -25px;vertical-align: middle" id="togglePassword">
     <label for="submit">&nbsp</label>
     <input type="submit" style="color:red;width: 7em;" value="set password">
   </form><br>
