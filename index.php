@@ -110,6 +110,7 @@
   <select class="tools" id="tools" size="1" name="tools" style="color: white;" onchange="selectAction(event); selectElement('tools', '');">
     <optgroup label="System" style="color: black; font-family: 'Times New Roman', Times, serif;">
       <option selected disabled hidden value="">Tools</option>
+      <option>File</option>
       <option>rtpMIDI</option>
       <option>btMIDI</option>
       <option>System</option>
@@ -143,6 +144,9 @@
       switch (evt.target.value) {
         case "WiFi info":
           window.open('./tools/wifi_info.php','tools','width=800,height=600');
+          break;
+        case "File":
+          window.open('./tools/file.php', 'tools', 'width=800,height=600');
           break;
         case "rtpMIDI":
           window.open('./tools/rtpMIDI.php', 'tools', 'width=800,height=600');
