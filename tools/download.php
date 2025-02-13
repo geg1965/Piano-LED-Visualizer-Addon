@@ -5,10 +5,10 @@
 
   if ($preset == "all") {
     $file = "$file.plv_bank";
-    shell_exec("zip ./downloads/$file ../cfgs/*.xml.* -x *.default");
+    shell_exec("zip './downloads/$file' ../cfgs/*.xml.* -x *.default");
   } else {
     $file = "$file.plv_preset";
-    shell_exec("zip ./downloads/$file ../cfgs/*.xml.$preset");
+    shell_exec("zip './downloads/$file' ../cfgs/*.xml.$preset");
     $txt = "PLV-Preset $preset was downloaded.";
   }
   if(!file_exists("./downloads/$file")){ // file does not exist
@@ -25,5 +25,4 @@
     readfile("./downloads/$file");
     unlink("./downloads/$file");
   }
-
 ?>
