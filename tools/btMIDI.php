@@ -3,16 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>btMIDI setup</title>
-<html>
-  <head>
-    <title>PLV Bluetooth MIDI configuration</title>
-    <style>
-      iframe{
-        background-color:#DDDDDD;
-      }
-    </style>
-  </head>
+  <title>PLV Bluetooth MIDI configuration</title>
+  <style>
+    iframe{
+      background-color:#DDDDDD;
+    }
+  </style>
+</head>
 <body>
   <img style="float:left;width:100px;height:38px;" src="/imgs/btMIDI.png">
   <img style="float:right;width:100px;height:38px;" src="/imgs/empty.png">
