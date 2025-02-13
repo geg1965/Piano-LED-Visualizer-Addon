@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-  <title>Piano LED Emulator</title>
+  <title>WiFi level</title>
   <script type="text/javascript">
     window.resizeTo(100, 120);
     function refreshPopup() {
@@ -26,4 +26,3 @@
   </svg>
 </body>
 </hrtml>
-
