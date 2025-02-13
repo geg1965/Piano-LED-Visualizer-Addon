@@ -24,8 +24,16 @@
       <option selected disabled hidden value="">Select Preset</option>
       <option style="color: black" value="all">Bank</option>
       <?php
+        $list = shell_exec("cd ../cfgs; ls settings.xml.*");
         for ($i = 1; $i <= 128; $i++) {
-          echo "<option style=\"color: black\" value=\"$i\">Preset $i</option>";
+          if (preg_match("/settings.xml.$i/i", "$list")) {
+            $name = "Preset";
+            $color = "red";
+          } else {
+            $name = "Empty";
+            $color = "black";
+          }
+          echo "<option style=\"color: $color\" value=\"$i\">$name $i</option>";
         }
       ?>
       </optgroup>
@@ -42,7 +50,14 @@
       <option style="color: black" value="all">Bank</option>
       <?php
         for ($i = 1; $i <= 128; $i++) {
-          echo "<option style=\"color: black\" value=\"$i\">Preset $i</option>";
+          if (preg_match("/settings.xml.$i/i", "$list")) {
+            $name = "Preset";
+            $color = "red";
+          } else {
+            $name = "Empty";
+            $color = "black";
+          }
+          echo "<option style=\"color: $color\" value=\"$i\">$name $i</option>";
         }
       ?>
       </optgroup>
