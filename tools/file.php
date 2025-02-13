@@ -58,9 +58,7 @@
   <script>
     function delete_presets() {
      if (confirm('Are you sure you want to delete all presets?')) {
-       <?php shell_exec("find ../cfgs -type f -name '*.xml.*' ! -name '*.default' -delete"); ?>;
-       alert("All presets where deleted!");
-       var url= "/tools/file.php";
+       var url= "/tools/delete_presets.php";
        window.location = url;
      }
     }
