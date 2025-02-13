@@ -170,7 +170,7 @@
           window.open('ledemu2.html', 'emulator', 'width=400,height=600');
           break;
         case "About":
-          alert('Piano LED Visualizer @-on v1.1.1\n\nMade by GEG1965 [© 2025]');
+          alert('Piano LED Visualizer @-on v1.2.0\n\nMade by GEG1965 [© 2025]');
           break;
         case "GitHub":
           window.open('https://github.com/geg1965/Piano-LED-Visualizer-Addon/');
