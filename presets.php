@@ -122,8 +122,16 @@
     <optgroup label="Load Preset:" style="color: gray; font-family: 'Times New Roman', Times, serif;">
     <option selected disabled hidden value="">Load Preset</option>
     <?php
+      $list = shell_exec("cd cfgs; ls settings.xml.*");
       for ($i = 1; $i <= 128; $i++) {
-        echo "<option style=\"color: black\" value=\"$i\">Preset $i</option>";
+        if (preg_match("/settings.xml.$i/i", "$list")) {
+          $name = "Preset";
+          $color = "red";
+        } else {
+          $name = "Empty";
+          $color = "black";
+        }
+        echo "<option style=\"color: $color\" value=\"$i\">$name $i</option>";
       }
     ?>
     </optgroup>
@@ -136,7 +144,14 @@
     <option selected disabled hidden value="">Save Preset</option>
     <?php
       for ($i = 1; $i <= 128; $i++) {
-        echo "<option style=\"color: black\" value=\"$i\">Preset $i</option>";
+        if (preg_match("/settings.xml.$i/i", "$list")) {
+          $name = "Preset";
+          $color = "red";
+        } else {
+          $name = "Empty";
+          $color = "black";
+        }
+        echo "<option style=\"color: $color\" value=\"$i\">$name $i</option>";
       }
     ?>
     </optgroup>
