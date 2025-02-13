@@ -8,9 +8,8 @@
     $txt = "";
   }
   shell_exec("printf '$P''\n''$P''\n' | passwd plv");
+  echo ("<script>");
+  echo ("alert(\"Password for user plv have been set$txt!\");");
+  echo ("window.top.location.href = 'system.php';");
+  echo ("</script>");
 ?>
-<script>
-  var txt = "Password for user plv have been set<?php echo $txt; ?>!";
-  alert(txt);
-  window.top.location.href = 'system.php';
-</script>
