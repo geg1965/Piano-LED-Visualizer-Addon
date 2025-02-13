@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-  <title>WiFi level</title>
+  <title>WiFi status</title>
   <script type="text/javascript">
     window.resizeTo(100, 120);
     function refreshPopup() {
