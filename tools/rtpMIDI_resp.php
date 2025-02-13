@@ -1,6 +1,8 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>rtpMIDI Hosts response</title>
   <script type="text/javascript">
     function refreshPopup() {
@@ -41,7 +43,6 @@
       echo "<text x=\"3\" y=\"$pos_y[$i]\" fill=\"$fill_t\" font-size=\"small\">$ip</text>";
     }
   ?>
-</svg>
-
+  </svg>
 </body>
 </html>
