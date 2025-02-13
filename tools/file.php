@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Preset Backup & Restore</title>
+  <style>
+    iframe{
+      background-color:#DDDDDD;
+    }
+  </style>
 </head>
 <body>
   <img style="float:left;width:100px;height:38px;" src="/imgs/file.png">
@@ -46,7 +51,10 @@
   </form><br><br>
   <div style="text-align:center">
     <button  style="color:red;" onclick="delete_presets()">Reset all Presets</button>
-  </div>
+  </div><br>
+  <h2>The active PLV configuration:</h2>
+  <iframe src="list_file.php?path=/home/Piano-LED-Visualizer/config/&file=settings.xml" width="98%" height="400px" style="border:1px solid black;">
+  </iframe>
   <script>
     function delete_presets() {
      if (confirm('Are you sure you want to delete all presets?')) {
