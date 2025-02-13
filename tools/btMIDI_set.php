@@ -6,8 +6,8 @@
   if ("$action" !== "") {
     $result=shell_exec("bluetoothctl $action $mac");
   }
+  echo ("<script>");
+  echo ("alert(\"Action $action for $mac was done!\");");
+  echo ("window.top.location.href = 'btMIDI.php';");
+  echo ("</script>");
 ?>
-<script>
-alert("Action <?=$action?> for <?=$mac?> was done!");
-window.top.location.href = 'btMIDI.php';
-</script>
