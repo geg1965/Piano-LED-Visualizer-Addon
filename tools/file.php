@@ -8,6 +8,9 @@
     iframe{
       background-color:#DDDDDD;
     }
+    input[type=text]:focus {
+      background-color: lightblue;
+    }
   </style>
 </head>
 <body>
@@ -17,8 +20,8 @@
   <h3 style="text-align:center;">Individual presets and preset banks can be saved and restored. When restoring individual presets, the destination can be selected. Restoring an entire bank will overwrite or delete existing presets.</h3><br>
 
   <form action="upload.php" method="post" enctype="multipart/form-data" style="text-align:center;">
-    Select file:
-    <input type="file" name="fileToUpload" id="fileToUpload" accept=".plv_bank,.plv_preset" required="required">
+    Upload file
+    <input type="file" style="width: 250px; border: 1px dashed #BBB;" name="fileToUpload" id="fileToUpload" accept=".plv_bank,.plv_preset" required="required">
     <select id="preset" size="1" name="preset">
       <optgroup label="Destination:" style="color: gray; font-family: 'Times New Roman', Times, serif;">
       <option selected disabled hidden value="">Select Preset</option>
@@ -26,7 +29,7 @@
       <?php
         $list = shell_exec("cd ../cfgs; ls settings.xml.*");
         for ($i = 1; $i <= 128; $i++) {
-          if (preg_match("/settings.xml.$i/i", "$list")) {
+          if (preg_match("/settings.xml.$i\n/i", "$list")) {
             $name = "Preset";
             $color = "red";
           } else {
@@ -38,45 +41,60 @@
       ?>
       </optgroup>
     </select>
-    <input type="submit" value="Upload" name="submit">
+    <input type="submit" style="width: 7em;" value="Upload" name="submit">
   </form><br><br>
 
   <form action="download.php" style="text-align:center;">
-    Download file name:
-    <input type="test" name="file" id="fileToDownload" required="required" pattern="[A-Za-z0-9²³@€\-\(\)\{\}\[\]_ #+&%$§!]{1,25}">
+    Download filename
+    <input type="text" size="23px" name="file" id="fileToDownload" required="required" pattern="[A-Za-z0-9²³@€\-\(\)\{\}\[\]_ #+&%$§!]{1,25}">
     <select id="preset" size="1" name="preset">
       <optgroup label="Save Preset:" style="color: gray; font-family: 'Times New Roman', Times, serif;">
       <option selected disabled hidden value="">Select Preset</option>
       <option style="color: black" value="all">Bank</option>
       <?php
         for ($i = 1; $i <= 128; $i++) {
-          if (preg_match("/settings.xml.$i/i", "$list")) {
+          if (preg_match("/settings.xml.$i\n/i", "$list")) {
             $name = "Preset";
             $color = "red";
+            $disabled = "";
           } else {
             $name = "Empty";
-            $color = "black";
+            $color = "gray";
+            $disabled = "disabled";
           }
-          echo "<option style=\"color: $color\" value=\"$i\">$name $i</option>";
+          echo "<option $disabled style=\"color: $color\" value=\"$i\">$name $i</option>";
         }
       ?>
       </optgroup>
     </select>
-    <input type="submit" value="Download" name="submit">
+    <input type="submit"  style="width: 7em;" value="Download" name="submit">
   </form><br><br>
-  <div style="text-align:center">
-    <button  style="color:red;" onclick="delete_presets()">Reset all Presets</button>
-  </div><br>
+  <form action="delete_presets.php" style="text-align:center;">
+    Remove preset
+    <select id="preset" size="1" name="preset">
+      <optgroup label="Save Preset:" style="color: gray; font-family: 'Times New Roman', Times, serif;">
+        <option selected disabled hidden value="">Select Preset</option>
+        <option style="color: red" value="all">Bank</option>
+        <?php
+          for ($i = 1; $i <= 128; $i++) {
+            if (preg_match("/settings.xml.$i\n/i", "$list")) {
+              $name = "Preset";
+              $color = "red";
+              $disabled = "";
+            } else {
+              $name = "Empty";
+              $color = "gray";
+              $disabled = "disabled";
+            }
+            echo "<option $disabled style=\"color: $color\" value=\"$i\">$name $i</option>";
+          }
+        ?>
+      </optgroup>
+    </select>
+    <input type="submit" style="color:red;width: 7em;" value="Delete" name="submit">
+  </form>
   <h2>The active PLV configuration:</h2>
   <iframe src="list_file.php?path=/home/Piano-LED-Visualizer/config/&file=settings.xml" width="98%" height="400px" style="border:1px solid black;">
   </iframe>
-  <script>
-    function delete_presets() {
-     if (confirm('Are you sure you want to delete all presets?')) {
-       var url= "/tools/delete_presets.php";
-       window.location = url;
-     }
-    }
-  </script>
 </body>
 </html>
