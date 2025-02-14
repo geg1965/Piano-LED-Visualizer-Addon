@@ -124,14 +124,16 @@
     <?php
       $list = shell_exec("cd cfgs; ls settings.xml.*");
       for ($i = 1; $i <= 128; $i++) {
-        if (preg_match("/settings.xml.$i/i", "$list")) {
+        if (preg_match("/settings.xml.$i\n/i", "$list")) {
           $name = "Preset";
           $color = "red";
+          $disabled = "";
         } else {
           $name = "Empty";
-          $color = "black";
+          $color = "gray";
+          $disabled = "disabled";
         }
-        echo "<option style=\"color: $color\" value=\"$i\">$name $i</option>";
+        echo "<option $disabled style=\"color: $color\" value=\"$i\">$name $i</option>";
       }
     ?>
     </optgroup>
@@ -144,7 +146,7 @@
     <option selected disabled hidden value="">Save Preset</option>
     <?php
       for ($i = 1; $i <= 128; $i++) {
-        if (preg_match("/settings.xml.$i/i", "$list")) {
+        if (preg_match("/settings.xml.$i\n/i", "$list")) {
           $name = "Preset";
           $color = "red";
         } else {
