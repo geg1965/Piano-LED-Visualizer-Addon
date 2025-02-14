@@ -8,6 +8,12 @@
     iframe{
       background-color:#DDDDDD;
     }
+    input[type=text]:focus {
+      background-color: lightblue;
+    }
+    input[type=number]:focus {
+      background-color: lightblue;
+    }
   </style>
 </head>
 <body>
