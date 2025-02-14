@@ -12,6 +12,9 @@
     input[type="password"]::-ms-clear {
       display: none;
     }
+    input[type=text]:focus {
+      background-color: lightblue;
+    }
   </style>
 </head>
 <body>
