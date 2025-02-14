@@ -46,11 +46,10 @@
         shell_exec("rm -Rf ./uploads/cfgs/");
         echo '<script>alert("The preset file has been stored.")</script>';
       }
-//      echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
     } else {
       echo '<script>alert("Sorry, there was an error uploading your file.")</script>';
     }
     unlink("$target_file");
   }
-  echo '<script>history.back()</script>';
+  echo '<script>window.top.location.href = \'file.php\';</script>';
 ?>
