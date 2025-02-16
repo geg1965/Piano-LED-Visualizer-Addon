@@ -93,8 +93,14 @@
     </select>
     <input type="submit" style="color:red;width: 7em;" value="Delete" name="submit">
   </form>
-  <h2>The active PLV configuration:</h2>
+  <h2>The active PLV configuration:
+  <svg id="refresh-logs" onclick="return refresh();" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <path d="M2.5 2v6h6M21.5 22v-6h-6"/><path d="M22 11.5A10 10 0 0 0 3.2 7.2M2 12.5a10 10 0 0 0 18.8 4.2"/></svg></h2>
   <iframe src="list_file.php?path=/home/Piano-LED-Visualizer/config/&file=settings.xml" width="98%" height="400px" style="border:1px solid black;">
   </iframe>
+  <script type="text/javascript">
+    function refresh() {
+      window.location.reload(true);
+    }
+  </script>
 </body>
 </html>
