@@ -1,7 +1,6 @@
 <?php
   $file = $_GET["file"];
   $preset = $_GET['preset'];
-  $txt = "Preset not found!";
 
   if ($preset == "all") {
     $file = "$file.plv_bank";
@@ -9,9 +8,8 @@
   } else {
     $file = "$file.plv_preset";
     shell_exec("zip './downloads/$file' ../cfgs/*.xml.$preset");
-    $txt = "PLV-Preset $preset was downloaded.";
   }
-  if(!file_exists("./downloads/$file")){ // file does not exist
+  if(!file_exists("./downloads/$file")){
     echo '<script>alert("Preset not available")</script>';
     echo '<script>history.back()</script>';
   } else {
