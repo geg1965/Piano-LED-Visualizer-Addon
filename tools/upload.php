@@ -36,9 +36,11 @@
         echo '<script>alert("The bank file has been stored.")</script>';
       } elseif ($FileType == "plv_bank") {
         echo '<script>alert("Please select \"Bank\" to restore a bank file!")</script>';
+        echo '<script>history.back();</script>';
       }
       if($FileType == "plv_preset" && ("$preset" == "all" | "$preset" == "")){
         echo '<script>alert("Please select a preset to store a preset file!")</script>';
+        echo '<script>history.back();</script>';
       } elseif ($FileType == "plv_preset") {
         shell_exec("unzip -d ./uploads '$target_file'");
         shell_exec("mv ./uploads/cfgs/settings.xml.* ../cfgs/settings.xml.$preset");
