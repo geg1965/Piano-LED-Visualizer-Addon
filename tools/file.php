@@ -21,7 +21,7 @@
 
   <form action="upload.php" method="post" enctype="multipart/form-data" style="text-align:center;">
     Upload file
-    <input type="file" style="width: 250px; border: 1px dashed #BBB;" name="fileToUpload" id="fileToUpload" accept=".plv_bank,.plv_preset" required="required">
+    <input type="file" style="width: 265px; border: 1px dashed #BBB;" name="fileToUpload" id="fileToUpload" accept=".plv_bank,.plv_preset" required="required">
     <select id="preset" size="1" name="preset">
       <optgroup label="Destination:" style="color: gray; font-family: 'Times New Roman', Times, serif;">
       <option selected disabled hidden value="">Select Preset</option>
@@ -46,7 +46,7 @@
 
   <form action="download.php" style="text-align:center;">
     Download filename
-    <input type="text" size="23px" name="file" id="fileToDownload" required="required" pattern="[A-Za-z0-9²³@€\-\(\)\{\}\[\]_ #+&%$§!]{1,25}">
+    <input type="text" size="25px" name="file" id="fileToDownload" required="required" pattern="[A-Za-z0-9²³@€\-\(\)\{\}\[\]_ #+&%$§!]{1,25}">
     <select id="preset" size="1" name="preset">
       <optgroup label="Save Preset:" style="color: gray; font-family: 'Times New Roman', Times, serif;">
       <option selected disabled hidden value="">Select Preset</option>
