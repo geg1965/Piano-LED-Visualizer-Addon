@@ -34,10 +34,16 @@
     <input type="submit" style="color:green;width: 5em;" value="Submit"><br>
   </form>
   <br><br>
-  <h2>Bluetooth devices:</h2>
+  <h2>Bluetooth devices:
+  <svg id="refresh-logs" onclick="return refresh();" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <path d="M2.5 2v6h6M21.5 22v-6h-6"/><path d="M22 11.5A10 10 0 0 0 3.2 7.2M2 12.5a10 10 0 0 0 18.8 4.2"/></svg></h2>
   <iframe src="btMIDI_list.php" width="98%" height="400px" style="border:1px solid black;">
   </iframe>
   <?php $version = shell_exec("dpkg -l| grep ' bluez ' | awk '{print $3}'");?>
   <font size="1" color="gray">Installed  bluez version: <?= $version ?></font>
+  <script type="text/javascript">
+    function refresh() {
+      window.location.reload(true);
+    }
+  </script>
 </body>
 </html>
