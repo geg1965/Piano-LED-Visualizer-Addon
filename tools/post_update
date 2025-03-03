@@ -47,6 +47,11 @@ if [ -f $PLVPATH/$FILE ]; then
         print "            subprocess.run([\"/home/Piano-LED-Visualizer/prgchange\", str(program), str(channel)])";
         print ""; print; next
       }1' "$PLVPATH/$FILE" > temp && mv temp "$PLVPATH/$FILE"
+      awk '/import os/ {print; print "import subprocess"; next}1' "$PLVPATH/$FILE" > temp && mv temp "$PLVPATH/$FILE"
+      awk -v pat="import os" '$0~pat{
+        print "import subprocess";
+        print; next
+      }1' "$PLVPATH/$FILE" > temp && mv temp "$PLVPATH/$FILE"
       chmod 777 "$PLVPATH/$FILE"
     fi
   fi
