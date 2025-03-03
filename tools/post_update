@@ -28,6 +28,11 @@ if [ -f $PLVPATH/$FILE ]; then
         print "                self.handle_program_change(msg)";
         print ""; print; next
       }1' "$PLVPATH2/$FILE2" > temp && mv temp "$PLVPATH2/$FILE2"
+      awk '/import os/ {print; print "import subprocess"; next}1' "$PLVPATH2/$FILE2" > temp && mv temp "$PLVPATH2/$FILE2"
+      awk -v pat="import time" '$0~pat{
+        print "import subprocess";
+        print; next
+      }1' "$PLVPATH2/$FILE2" > temp && mv temp "$PLVPATH2/$FILE2"
       chmod 777 "$PLVPATH2/$FILE2"
     fi
   else
