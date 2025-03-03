@@ -1,23 +1,41 @@
 #!/bin/bash
+STRING="# Midi program change event"
 STRING1="# Midi control change event"
-STRING2="# Midi program change event"
+STRING2="def handle_control_change"
 FILE="visualizer.py"
+FILE2="midi_event_processor.py"
 PLVPATH="/home/Piano-LED-Visualizer"
+PLVPATH2="$PLVPATH/lib"
 
 if [ -f $PLVPATH/$FILE ]; then
-  if [ `grep -c "$STRING2" "$PLVPATH/$FILE"` == 0 ]; then
-    cp "$PLVPATH/$FILE" "$PLVPATH/$FILE.bak"
-    awk '/import os/ {print; print "import subprocess"; next}1' "$PLVPATH/$FILE" > temp && mv temp "$PLVPATH/$FILE"
-    awk -v pat="$STRING1" '$0~pat{
-      print "        # Midi program change event";
-      print "        elif msg.type == \"program_change\":";
-      print "            program = msg.program";
-      print "            channel = find_between(str(msg), \"channel=\", \" \")";
-      print "            subprocess.run([\"/home/Piano-LED-Visualizer/prgchange\", str(program), str(channel)])";
-      print ""; print; next
-    }1' "$PLVPATH/$FILE" > temp && mv temp "$PLVPATH/$FILE"
-    chmod 777 "$PLVPATH/$FILE"
-  fi
   mv "$PLVPATH/webinterface/php/tools/prgchange" "$PLVPATH"
   chmod +x "$PLVPATH/prgchange"
+  if [ -f $PLVPATH2/$FILE2 ]; then
+    if [ `grep -c "def handle_program_change" "$PLVPATH2/$FILE2"` == 0 ]; then
+      cp "$PLVPATH2/$FILE2" "$PLVPATH2/$FILE2.bak"
+      awk '/import os/ {print; print "import subprocess"; next}1' "$PLVPATH2/$FILE2" > temp && mv temp "$PLVPATH2/$FILE2"
+      awk -v pat="$STRING2" '$0~pat{
+        print "    def handle_program_change(self, msg, msg_timestamp):";
+        print "        program = msg.program";
+        print "        channel = find_between(str(msg), \"channel=\", \" \")";
+        print "        subprocess.run([\"/home/Piano-LED-Visualizer/prgchange\", str(program), str(channel)])";
+        print ""; print; next
+      }1' "$PLVPATH2/$FILE2" > temp && mv temp "$PLVPATH2/$FILE2"
+      chmod 777 "$PLVPATH2/$FILE2"
+    fi
+  else
+    if [ `grep -c "$STRING" "$PLVPATH/$FILE"` == 0 ]; then
+      cp "$PLVPATH/$FILE" "$PLVPATH/$FILE.bak"
+      awk '/import os/ {print; print "import subprocess"; next}1' "$PLVPATH/$FILE" > temp && mv temp "$PLVPATH/$FILE"
+      awk -v pat="$STRING1" '$0~pat{
+        print "        # Midi program change event";
+        print "        elif msg.type == \"program_change\":";
+        print "            program = msg.program";
+        print "            channel = find_between(str(msg), \"channel=\", \" \")";
+        print "            subprocess.run([\"/home/Piano-LED-Visualizer/prgchange\", str(program), str(channel)])";
+        print ""; print; next
+      }1' "$PLVPATH/$FILE" > temp && mv temp "$PLVPATH/$FILE"
+      chmod 777 "$PLVPATH/$FILE"
+    fi
+  fi
 fi
