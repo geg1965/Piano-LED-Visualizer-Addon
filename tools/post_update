@@ -2,6 +2,7 @@
 STRING="# Midi program change event"
 STRING1="# Midi control change event"
 STRING2="def handle_control_change"
+STRING3="elif msg.type == \"control_change\":"
 FILE="visualizer.py"
 FILE2="midi_event_processor.py"
 PLVPATH="/home/Piano-LED-Visualizer"
@@ -15,10 +16,16 @@ if [ -f $PLVPATH/$FILE ]; then
       cp "$PLVPATH2/$FILE2" "$PLVPATH2/$FILE2.bak"
       awk '/import os/ {print; print "import subprocess"; next}1' "$PLVPATH2/$FILE2" > temp && mv temp "$PLVPATH2/$FILE2"
       awk -v pat="$STRING2" '$0~pat{
-        print "    def handle_program_change(self, msg, msg_timestamp):";
+        print "    def handle_program_change(self, msg):";
         print "        program = msg.program";
         print "        channel = find_between(str(msg), \"channel=\", \" \")";
         print "        subprocess.run([\"/home/Piano-LED-Visualizer/prgchange\", str(program), str(channel)])";
+        print ""; print; next
+      }1' "$PLVPATH2/$FILE2" > temp && mv temp "$PLVPATH2/$FILE2"
+      awk '/import os/ {print; print "import subprocess"; next}1' "$PLVPATH2/$FILE2" > temp && mv temp "$PLVPATH2/$FILE2"
+      awk -v pat="$STRING3" '$0~pat{
+        print "            elif msg.type == \"program_change\":";
+        print "                self.handle_program_change(msg)";
         print ""; print; next
       }1' "$PLVPATH2/$FILE2" > temp && mv temp "$PLVPATH2/$FILE2"
       chmod 777 "$PLVPATH2/$FILE2"
