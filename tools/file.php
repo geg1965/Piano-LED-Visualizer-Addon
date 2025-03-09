@@ -17,15 +17,16 @@
   <img style="float:left;width:100px;height:38px;" src="/imgs/file.png">
   <img style="float:right;width:100px;height:38px;" src="/imgs/empty.png">
   <h1 style="color:blue;text-align:center;">Preset Manager</h1>
-  <h3 style="text-align:center;">Individual presets and preset banks can be saved and restored. When restoring individual presets, the destination can be selected. Restoring an entire bank will overwrite or delete existing presets.</h3><br>
+  <h3 style="text-align:center;">Individual presets and preset banks or the entire MIDI song list can be saved and restored. When restoring individual presets, the destination can be selected. Restoring an entire bank will overwrite or delete existing presets. Restoring a MIDI song list will delete existing songs!</h3><br>
 
   <form action="upload.php" method="post" enctype="multipart/form-data" style="text-align:center;">
     Upload file
-    <input type="file" style="width: 265px; border: 1px dashed #BBB;" name="fileToUpload" id="fileToUpload" accept=".plv_bank,.plv_preset" required="required">
+    <input type="file" style="width: 265px; border: 1px dashed #BBB;" name="fileToUpload" id="fileToUpload" accept=".plv_bank,.plv_preset,.plv_midi" required="required">
     <select id="preset" size="1" name="preset">
       <optgroup label="Destination:" style="color: gray; font-family: 'Times New Roman', Times, serif;">
       <option selected disabled hidden value="">Select Preset</option>
-      <option style="color: black" value="all">Bank</option>
+      <option style="color: blue" value="midi">MIDI Bank</option>
+      <option style="color: red" value="all">Preset Bank</option>
       <?php
         $list = shell_exec("cd ../cfgs; ls settings.xml.*");
         for ($i = 1; $i <= 128; $i++) {
@@ -50,7 +51,8 @@
     <select id="preset" size="1" name="preset">
       <optgroup label="Save Preset:" style="color: gray; font-family: 'Times New Roman', Times, serif;">
       <option selected disabled hidden value="">Select Preset</option>
-      <option style="color: black" value="all">Bank</option>
+      <option style="color: blue" value="midi">MIDI Bank</option>
+      <option style="color: red" value="all">Preset Bank</option>
       <?php
         for ($i = 1; $i <= 128; $i++) {
           if (preg_match("/settings.xml.$i\n/i", "$list")) {
