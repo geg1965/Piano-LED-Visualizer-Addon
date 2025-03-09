@@ -13,7 +13,7 @@
     shell_exec("zip './downloads/$file' ../cfgs/*.xml.$preset");
   }
   if(!file_exists("./downloads/$file")){
-    echo '<script>alert("No data available")</script>';
+    echo '<script>alert("No data available!")</script>';
     echo '<script>history.back()</script>';
   } else {
     header("Cache-Control: public");
