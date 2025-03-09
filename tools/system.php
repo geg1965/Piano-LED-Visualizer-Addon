@@ -23,19 +23,19 @@
   <img style="float:right;width:100px;height:38px;" src="/imgs/empty.png">
   <h1 style="color:blue;text-align:center;">Raspberry PI OS tools and infos</h1>
   <form style="text-align:center;" action="set_pw.php">
-    <label for="password">Enter new password for user "plv" </label>
+    <label for="id_password">Enter new password for user "plv" </label>
     <input type="password" style="width: 10em;" id="id_password" name="password" placeholder="empty for default" maxlength="15">
     <img src="/imgs/eye.png" width="20px" height="20px" style="display: inline;margin-left: -25px;vertical-align: middle" id="togglePassword">
-    <label for="submit">&nbsp</label>
-    <input type="submit" style="color:red;width: 7em;" value="set password">
+    <label for="id_submit">&nbsp</label>
+    <input type="submit" id="id_submit" style="color:red;width: 7em;" value="set password">
   </form><br>
 
   <form style="text-align:center;" method="post" action="">
     <?php
       $selected = shell_exec("cat ./inis/addon.ini") + 1;
     ?>
-    <label for="channel">Global MIDI-Channel for PLV preset change </label>
-    <select method="post" name="channel" onchange="this.form.submit()">
+    <label for="id_channel">Global MIDI-Channel for PLV preset change </label>
+    <select method="post" name="channel" id="id_channel" onchange="this.form.submit()">
       <optgroup label="Select" style="color: gray; font-family: 'Times New Roman', Times, serif;">
       <option disabled hidden value="">Channel</option>
       <option <?php if($selected == 99){echo("selected");}?> style="color: black" value="99">Off</option>
