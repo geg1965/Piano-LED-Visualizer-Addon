@@ -8,7 +8,7 @@
     $txt = "All presets deleted!";
   } elseif ($preset == "midi") {
     shell_exec("rm -r ../../../Songs/*");
-    $txt = "All MIDI-Files deleted!";
+    $txt = ""All MIDI files have been deleted!";
   } else {
     shell_exec("rm ../cfgs/*.xml.$preset");
     $txt = "Preset $preset was deleted!";
