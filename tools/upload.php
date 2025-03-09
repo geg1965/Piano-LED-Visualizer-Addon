@@ -56,7 +56,7 @@
         echo '<script>alert("Please select \"MIDI Bank\" to restore MIDI files!")</script>';
         echo '<script>history.back();</script>';
       } elseif ($FileType == "plv_midi") {
-        shell_exec("rm -r ../../../Songs/*; unzip -d ../../.. '$target_file'");
+        shell_exec("rm -r ../../../Songs/*; mkdir ../../../Songs/cache; unzip -d ../../.. '$target_file'");
         echo '<script>alert("The MIDI files have been stored.")</script>';
       }
     } else {
