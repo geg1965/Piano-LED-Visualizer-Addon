@@ -76,7 +76,8 @@
     <select id="preset" size="1" name="preset">
       <optgroup label="Save Preset:" style="color: gray; font-family: 'Times New Roman', Times, serif;">
         <option selected disabled hidden value="">Select Preset</option>
-        <option style="color: red" value="all">Bank</option>
+        <option style="color: blue" value="midi">MIDI Bank</option>
+        <option style="color: red" value="all">Preset Bank</option>
         <?php
           for ($i = 1; $i <= 128; $i++) {
             if (preg_match("/settings.xml.$i\n/i", "$list")) {
