@@ -7,8 +7,8 @@
     shell_exec("find ../cfgs -type f -name '*.xml.*' ! -name '*.default' -delete");
     $txt = "All presets deleted!";
   } elseif ($preset == "midi") {
-    shell_exec("rm -r ../../../Songs/*");
-    $txt = ""All MIDI files have been deleted!";
+    shell_exec("rm -r ../../../Songs/*; mkdir ../../../Songs/cache");
+    $txt = "All MIDI files have been deleted!";
   } else {
     shell_exec("rm ../cfgs/*.xml.$preset");
     $txt = "Preset $preset was deleted!";
