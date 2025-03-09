@@ -25,7 +25,7 @@
   </iframe>
   <h3></h3><br>
   <form action="rtpMIDI_set.php" style="text-align:center;">
-    <label for="IP">IP...........................</label>
+    <label for="ip1">IP...........................</label>
     <input type="number" style="width: 4em;" id="ip1" name="ip1" min="0" max="255" value="192" required="required"> .
     <input type="number" style="width: 4em;" id="ip2" name="ip2" min="0" max="255" value="168" required="required"> .
     <input type="number" style="width: 4em;" id="ip3" name="ip3" min="0" max="255" value="0" required="required"> .
@@ -34,14 +34,14 @@
     <input type="number" id="port" name="port" min="5000" max="6000" value="5004" required="required">
     <label for="replace">&emsp;&emsp;Replace all connections</label>
     <input type="checkbox" id="replace" name="replace" value="yes" onclick="enable_box(this.checked)"><br><br>
-    <label for="name">Bonjour-Name....</label>
-    <input type="text" id="name" name="name" required="required" placeholder="Remote Bonjour-Name">
+    <label for="id_name">Bonjour-Name....</label>
+    <input type="text" id="id_name" name="name" required="required" autocomplete="no" placeholder="Remote Bonjour-Name">
     <label for="minimal">&ensp;Minimal cfg</label>
     <input type="checkbox" id="minimal" name="minimal" value="yes" disabled><br><br><br>
-    <label>Add connection to rtpMIDI configuration....</label>
-    <input type="submit" style="color:green;width: 9em;" value="Add connection"><br><br><br>
-    <label>Reset rtpMIDI configuration to default........</label>
-    <input type="button" style="color:red;width: 9em;" value="Reset to defaults" onclick="location.href='rtpMIDI_reset.php';">
+    <label for="id_submit">Add connection to rtpMIDI configuration....</label>
+    <input type="submit" id="id_submit" style="color:green;width: 9em;" value="Add connection"><br><br><br>
+    <label for="id_reset">Reset rtpMIDI configuration to default........</label>
+    <input type="button" id="id_reset" style="color:red;width: 9em;" value="Reset to defaults" onclick="location.href='rtpMIDI_reset.php';">
   </form>
   <br><br>
   <h2>The active rtpMIDI configuration:</h2>
