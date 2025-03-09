@@ -2,7 +2,10 @@
   $file = $_GET["file"];
   $preset = $_GET['preset'];
 
-  if ($preset == "all") {
+  if ($preset == "midi") {
+        $file = "$file.plv_midi";
+    shell_exec("zip './downloads/$file' ../../../Songs/*.* -x *cache");
+  } elseif ($preset == "all") {
     $file = "$file.plv_bank";
     shell_exec("zip './downloads/$file' ../cfgs/*.xml.* -x *.default");
   } else {
