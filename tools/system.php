@@ -27,7 +27,7 @@
     <input type="password" style="width: 10em;" id="id_password" name="password" placeholder="empty for default" maxlength="15">
     <img src="/imgs/eye.png" width="20px" height="20px" style="display: inline;margin-left: -25px;vertical-align: middle" id="togglePassword">
     <label for="id_submit">&nbsp</label>
-    <input type="submit" id="id_submit" style="color:red;width: 7em;" value="set password">
+    <input type="submit" id="id_submit" style="color:red;width: 7em;" value="Set password">
   </form><br>
 
   <form style="text-align:center;" method="post" action="">
