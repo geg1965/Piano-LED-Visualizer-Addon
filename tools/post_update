@@ -7,6 +7,13 @@ FILE="visualizer.py"
 FILE2="midi_event_processor.py"
 PLVPATH="/home/Piano-LED-Visualizer"
 PLVPATH2="$PLVPATH/lib"
+CFG_DEFAULT="/home/plv/settings.xml.default"
+CFG_PATH="$PLVPATH/webinterface/php/cfgs"
+
+if [ -f "$CFG_DEFAULT" ]; then
+  cp "$CFG_DEFAULT" "$CFG_PATH"
+  chmod 777 "$CFG_PATH/*"
+fi
 
 if [ -f $PLVPATH/$FILE ]; then
   mv "$PLVPATH/webinterface/php/tools/prgchange" "$PLVPATH"
