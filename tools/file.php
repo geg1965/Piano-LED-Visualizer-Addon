@@ -23,7 +23,7 @@
     Upload file
     <input type="file" style="width: 265px; border: 1px dashed #BBB;" name="fileToUpload" id="fileToUpload" accept=".plv_bank,.plv_preset,.plv_midi" required="required">
     <select id="preset" size="1" name="preset">
-      <optgroup label="Destination:" style="color: gray; font-family: 'Times New Roman', Times, serif;">
+      <optgroup label="Upload:" style="color: gray; font-family: 'Times New Roman', Times, serif;">
       <option selected disabled hidden value="">Select Preset</option>
       <option style="color: blue" value="midi">MIDI Bank</option>
       <option style="color: red" value="all">Preset Bank</option>
@@ -49,7 +49,7 @@
     Download filename
     <input type="text" size="25px" name="file" id="fileToDownload" required="required" pattern="[A-Za-z0-9²³@€\-\(\)\{\}\[\]_ #+&%$§!]{1,25}">
     <select id="preset" size="1" name="preset">
-      <optgroup label="Save Preset:" style="color: gray; font-family: 'Times New Roman', Times, serif;">
+      <optgroup label="Download:" style="color: gray; font-family: 'Times New Roman', Times, serif;">
       <option selected disabled hidden value="">Select Preset</option>
       <option style="color: blue" value="midi">MIDI Bank</option>
       <option style="color: red" value="all">Preset Bank</option>
@@ -74,7 +74,7 @@
   <form action="delete_presets.php" style="text-align:center;">
     Remove preset
     <select id="preset" size="1" name="preset">
-      <optgroup label="Save Preset:" style="color: gray; font-family: 'Times New Roman', Times, serif;">
+      <optgroup label="Delete:" style="color: gray; font-family: 'Times New Roman', Times, serif;">
         <option selected disabled hidden value="">Select Preset</option>
         <option style="color: blue" value="midi">MIDI Bank</option>
         <option style="color: red" value="all">Preset Bank</option>
