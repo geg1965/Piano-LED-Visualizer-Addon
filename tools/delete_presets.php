@@ -2,7 +2,7 @@
   $preset = $_GET["preset"];
   $txt = "";
   if ($preset == "") {
-    $txt = "Select the preset you want to delete.";
+    $txt = "Select the Preset/Bank you want to delete.";
   } elseif ($preset == "all") {
     shell_exec("find ../cfgs -type f -name '*.xml.*' ! -name '*.default' -delete");
     $txt = "All presets deleted!";
