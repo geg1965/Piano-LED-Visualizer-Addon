@@ -25,7 +25,7 @@ if [ -f $PLVPATH/$FILE ]; then
       awk -v pat="$STRING2" '$0~pat{
         print "    def handle_program_change(self, msg):";
         print "        program = msg.program";
-        print "        channel = find_between(str(msg), \"channel=\", \" \")";
+        print "        channel = getattr(msg, \"channel\", None)";
         print "        subprocess.run([\"/home/Piano-LED-Visualizer/prgchange\", str(program), str(channel)])";
         print ""; print; next
       }1' "$PLVPATH2/$FILE2" > temp && mv temp "$PLVPATH2/$FILE2"
